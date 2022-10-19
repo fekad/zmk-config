@@ -1,0 +1,19 @@
+# Copyright (c) 2021 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_THE_KEYBOARD_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "fekad-keyboard"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+endif
+
+if SHIELD_THE_KEYBOARD_LEFT || SHIELD_THE_KEYBOARD_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+endif

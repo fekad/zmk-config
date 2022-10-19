@@ -1,0 +1,11 @@
+file_format: "1"
+id: the_keyboard
+name: The keyboard
+type: shield
+url: https://github.com/fekad/thekeyboard
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - the_keyboard_left
+  - the_keyboard_right
