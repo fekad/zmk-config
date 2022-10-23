@@ -63,7 +63,7 @@
 		//                 | BKSPC |  L1   | SHIFT |   |  ALT  |  L4   | ENTER |
 		symbol_layer {
 			bindings = <
-				&kp LS(N1)  &kp LS(N2)  &kp LS(N3)   &kp LS(N4)   &kp LS(N5)   &kp LS(N6) &kp LS(N7)   &kp LS(N8)   &none
+				&kp LS(N1)  &kp LS(N2)  &kp LS(N3)   &kp LS(N4)   &kp LS(N5)   &kp LS(N6) &kp LS(N7)   &kp LS(N8)   &none       &none
 				&none       &kp EQUAL   &kp GRAVE    &kp SQT      &kp COLON    &kp BSLH   &kp LBKT     &kp PIPE     &rhm RALT I &none
 				&kp TILDE   &none       &none        &kp DQT      &none        &kp LBKT   &kp LPAR     &kp RPAR     &kp RBKT    &none
 				                        &kp TAB      &kp TAB      &kp BSPC     &kp SPACE  &kp ENTER    &to NUMBER
