@@ -82,8 +82,8 @@
 		symbol_layer {
 			bindings = <
 				&kp ESC      &kp LS(N2)   &kp LS(N3)   &kp LS(N4)   &kp LS(N5)      &kp LS(N6)   &kp LS(N7)   &kp LS(N8)   &kp EXCL     &kp BSPC
-				&kp TAB      &kp EQUAL    &kp UNDER    &kp SQT      &kp COLON       &kp BSLH     &kp LPAR      &kp RPAR    &kp PIPE     &kp ENTER
-				&kp GRAVE    &kp PLUS     &kp MINUS    &kp DQT      &kp TILDE       &kp LBRC     &kp LBKT      &kp RBKT    &kp RBKC     &to NAV
+				&kp TAB      &kp EQUAL    &kp UNDER    &kp SQT      &kp COLON       &kp BSLH     &kp LPAR     &kp RPAR     &kp PIPE     &kp ENTER
+				&kp GRAVE    &kp PLUS     &kp MINUS    &kp DQT      &kp TILDE       &kp LBRC     &kp LBKT     &kp RBKT     &kp RBRC     &to NAV
 				                          &to BASE     &kp TAB      &kp SPACE       &kp BSPC     &kp ENTER    &to NUM
 			>;
 		};
