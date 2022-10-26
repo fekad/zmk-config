@@ -52,7 +52,7 @@
 		// 		&kp Q        &kp W        &kp F        &kp P        &kp B           &kp J        &kp L        &kp U        &kp Y        &kp SEMI
 		// 		&lhm LGUI A  &lhm LALT R  &lhm LCTRL S &lhm LSHFT T &kp G           &kp M        &rhm RSHFT N &rhm RCTRL E &rhm RALT I  &rhm RGUI O
 		// 		&kp Z        &kp X        &kp C        &kp D        &kp V           &kp K        &kp H        &kp COMMA    &kp DOT      &kp SLASH
-		// 		                          &none        &kp TAB      &kp SPACE       &kp BSPC     &kp ENTER    &to SYM
+		// 		                          &none        &kp TAB      &mt SPACE LG(SPACE)       &kp BSPC     &kp ENTER    &to SYM
 		// 	>;
 		// };
 
@@ -65,7 +65,7 @@
 		base_layer {
 			bindings = <
 				&kp Q        &kp W        &kp E        &kp R        &kp T           &kp Y        &kp U        &kp I        &kp O        &kp P
-				&lhm LCTRL A &lhm LALT S  &lhm LCMD D  &lhm LSHFT F &kp G           &kp H        &rhm RSHFT J &rhm RCMDK   &rhm RALT L  &rhm RCTRL SEMI
+				&lhm LCTRL A &lhm LALT S  &lhm LCMD D  &lhm LSHFT F &kp G           &kp H        &rhm RSHFT J &rhm RCMD K  &rhm RALT L  &rhm RCTRL SEMI
 				&kp Z        &kp X        &kp C        &kp V        &kp B           &kp N        &kp M        &kp COMMA    &kp DOT      &kp SLASH
 				                          &none        &kp TAB      &kp SPACE       &kp BSPC     &kp ENTER    &to SYM
 			>;
