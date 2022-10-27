@@ -67,7 +67,7 @@
 		// 		&kp Q        &kp W        &kp F        &kp P        &kp B               &kp J        &kp L        &kp U        &kp Y        &kp SEMI
 		// 		&lhm LCTRL A &lhm LALT R  &lhm LCMD S  &lhm LSHFT T &kp G               &kp M        &rhm RSHFT N &rhm RCMD E  &rhm RALT I  &rhm RCTRL O
 		// 		&kp Z        &kp X        &kp C        &kp D        &kp V               &kp K        &kp H        &kp COMMA    &kp DOT      &kp SLASH
-		// 		                          &none        &kp TAB      &mt LG(SPACE) SPACE &kp BSPC     &kp ENTER    &to SYM
+		// 		                          &mo NAVI     &kp TAB      &mt LG(SPACE) SPACE &kp BSPC     &kp ENTER    &to SYM
 		// 	>;
 		// };
 
@@ -82,7 +82,7 @@
 				&kp Q        &kp W        &kp E        &kp R        &kp T               &kp Y        &kp U        &kp I        &kp O        &kp P
 				&lhm LCTRL A &lhm LALT S  &lhm LCMD D  &lhm LSHFT F &kp G               &kp H        &rhm RSHFT J &rhm RCMD K  &rhm RALT L  &rhm RCTRL SEMI
 				&kp Z        &kp X        &kp C        &kp V        &kp B               &kp N        &kp M        &kp COMMA    &kp DOT      &kp SLASH
-		 		                          &none        &kp TAB      &mt LG(SPACE) SPACE &kp BSPC     &kp ENTER    &to SYM
+		 		                          &mo NAVI     &kp TAB      &mt LG(SPACE) SPACE &kp BSPC     &kp ENTER    &to SYM
 			>;
 		};
 
@@ -99,7 +99,7 @@
 				&kp ESC        &kp LS(N2)      &kp LS(N3)       &kp LS(N4)     &kp LS(N5)          &kp LS(N6)   &kp LS(N7)      &kp LS(N8)      &kp EXCL        &kp BSPC
 				&lhm LCTRL TAB &lhm LALT EQUAL &lhm LCMD UNDER  &lhm LSHFT SQT &kp COLON           &kp BSLH     &rhm RSHFT LPAR &rhm RSHFT RPAR &rhm RSHFT PIPE &rhm RSHFT ENTER
 				&kp GRAVE      &kp PLUS        &kp MINUS        &kp DQT        &kp TILDE           &kp LBRC     &kp LBKT        &kp RBKT        &kp RBRC        &to NAV
-		 		                               &to BASE         &kp TAB        &mt LG(SPACE) SPACE &kp BSPC     &kp ENTER    &to NUM
+		 		                               &to BASE         &kp TAB        &mt LG(SPACE) SPACE &kp BSPC     &kp ENTER       &to NUM
 			>;
 		};
 
@@ -123,12 +123,12 @@
 		// |  ESC  |       |       |       |       |   | HOME  | PGUP  |  UP   | PGDN  |       |
 		// |  TAB  |       |       |       |       |   |  END  | LEFT  | DOWN  | RIGHT |       |
 		// |       |       |       |       |       |   |       |       |       |       |       |
-		//                 |  GUI  |  LWR  |  SPC  |   |  ENT  |  RSE  |  ALT  |
+		//                 | BASE  |  TAB  | SPACE |   |  BSPC | ENTER |  SYM  |
 		navigation_layer {
 			bindings = <
 				&none        &none        &none        &none        &none           &kp HOME     &kp PG_UP    &kp UP       &kp PG_DN    &none
-			    &none        &none        &none        &none        &none           &kp END      &kp LEFT     &kp DOWN     &kp RIGHT    &none
-			    &none        &none        &none        &none        &none           &none        &none        &none        &none        &none
+			    &kp LCTRL    &kp LALT     &kp LCMD     &kp LSHFT    &none           &kp END      &kp LEFT     &kp DOWN     &kp RIGHT    &none
+			    &to SET      &none        &none        &none        &none           &none        &none        &none        &none        &none
 				                          &to BASE     &kp TAB      &kp SPACE       &kp BSPC     &kp ENTER    &to SYM
 		>;
 		};
@@ -137,7 +137,7 @@
 		// |OUT_TOG|OUT_BLE|OUT_USB|  BL   | RESET |   |  F1   |  F2   |  F3   |  F4   |       |
 		// |  BT1  |  BT2  |  BT3  |  BT4  |  BT5  |   |  F5   |  F6   |  F7   |  F8   |       |
 		// | BTCLR | K_PWR |       |       |       |   |  F9   |  F10  |  F11  |  F12  |       |
-		//                 |       |       |       |   |       |       |       |
+		//                 | BASE  |  TAB  | SPACE |   |  BSPC | ENTER |  SYM  |
 		setting_layer {
 			bindings = <
 				&out OUT_TOG &out OUT_BLE &out OUT_USB &bootloader  &reset          &kp F1       &kp F2       &kp F3       &kp F4       &none
