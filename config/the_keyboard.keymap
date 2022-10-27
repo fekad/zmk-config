@@ -67,7 +67,7 @@
 		// 		&kp Q        &kp W        &kp F        &kp P        &kp B               &kp J        &kp L        &kp U        &kp Y        &kp SEMI
 		// 		&lhm LCTRL A &lhm LALT R  &lhm LCMD S  &lhm LSHFT T &kp G               &kp M        &rhm RSHFT N &rhm RCMD E  &rhm RALT I  &rhm RCTRL O
 		// 		&kp Z        &kp X        &kp C        &kp D        &kp V               &kp K        &kp H        &kp COMMA    &kp DOT      &kp SLASH
-		// 		                          &mo NAVI     &kp TAB      &mt LG(SPACE) SPACE &kp BSPC     &kp ENTER    &to SYM
+		// 		                          &mo NAV      &kp TAB      &mt LG(SPACE) SPACE &kp BSPC     &kp ENTER    &to SYM
 		// 	>;
 		// };
 
@@ -82,7 +82,7 @@
 				&kp Q        &kp W        &kp E        &kp R        &kp T               &kp Y        &kp U        &kp I        &kp O        &kp P
 				&lhm LCTRL A &lhm LALT S  &lhm LCMD D  &lhm LSHFT F &kp G               &kp H        &rhm RSHFT J &rhm RCMD K  &rhm RALT L  &rhm RCTRL SEMI
 				&kp Z        &kp X        &kp C        &kp V        &kp B               &kp N        &kp M        &kp COMMA    &kp DOT      &kp SLASH
-		 		                          &mo NAVI     &kp TAB      &mt LG(SPACE) SPACE &kp BSPC     &kp ENTER    &to SYM
+		 		                          &mo NAV      &kp TAB      &mt LG(SPACE) SPACE &kp BSPC     &kp ENTER    &to SYM
 			>;
 		};
 
