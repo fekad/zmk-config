@@ -10,6 +10,13 @@
 #define NAV      3
 #define SET      4
 
+
+#define M_UP MOVE_VERT(-1200)
+#define M_DN MOVE_VERT(1200)
+#define M_LT MOVE_HOR(-1200)
+#define M_RT MOVE_HOR(1200)
+
+
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt {
 	quick_tap_ms = <200>;
@@ -25,11 +32,11 @@
 };
 
 &mmv {
-    time-to-max-speed-ms = <50>;
+    time-to-max-speed-ms = <100>;
 };
 
 &mwh {
-    acceleration-exponent=<1>;
+    acceleration-exponent=<2>;
 };
 
 
@@ -105,7 +112,7 @@
 				&kp Q        &kp W        &kp E        &kp R               &kp T               &kp Y            &kp U        &kp I        &kp O        &kp P
 				&lhm LCTRL A &lhm LALT S  &lhm LCMD D  &lhm LSHFT F        &kp G               &kp H            &rhm RSHFT J &rhm RCMD K  &rhm RALT L  &rhm RCTRL SEMI
 				&kp Z        &kp X        &kp C        &kp V               &kp B               &kp N            &kp M        &kp COMMA    &kp DOT      &kp SLASH
-		 		                          &mo NAV      &sl SYM             &smm LSHIFT LSHIFT  &smm LCMD LCMD   &mt LG(SPACE) SPACE &smm LCTRL LCTRL
+		 		                          &mo NAV      &mt LG(SPACE) SPACE &sk LSHIFT          &smm LCMD LCMD   &sl SYM      &smm LCTRL LCTRL
 			>;
 		};
 
@@ -149,8 +156,8 @@
 		//                 | BASE  |  TAB  | SPACE |   |  BSPC | ENTER |       |
 		navigation_layer {
 			bindings = <
-				&none        &mwh SCROLL_UP &mmv MOVE_UP   &mwh SCROLL_DOWN &none           &kp HOME     &kp PG_UP    &kp UP       &kp PG_DN    &none
-			    &none        &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT  &none           &kp END      &kp LEFT     &kp DOWN     &kp RIGHT    &none
+				&none        &mkp RCLK      &mmv MOVE_UP   &mkp LCLK        &none           &kp HOME     &kp PG_UP    &kp UP       &kp PG_DN    &none
+			    &none        &mmv M_LT      &mmv MOVE_DN   &mmv MOVE_RT     &none           &kp END      &kp LEFT     &kp DOWN     &kp RIGHT    &none
 			    &to SET      &mkp RCLK      &mkp MCLK      &mkp LCLK        &none           &none        &none        &none        &none        &none
 				                            &to BASE       &kp TAB          &kp SPACE       &kp BSPC     &kp ENTER    &none
 		>;
