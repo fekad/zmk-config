@@ -156,8 +156,8 @@
 		//                 | BASE  |  TAB  | SPACE |   |  BSPC | ENTER |       |
 		navigation_layer {
 			bindings = <
-				&none        &mkp RCLK      &mmv MOVE_UP   &mkp LCLK        &none           &kp HOME     &kp PG_UP    &kp UP       &kp PG_DN    &none
-			    &none        &mmv M_LT      &mmv MOVE_DN   &mmv MOVE_RT     &none           &kp END      &kp LEFT     &kp DOWN     &kp RIGHT    &none
+				&none        &mkp RCLK      &mmv M_UP      &mkp LCLK        &none           &kp HOME     &kp PG_UP    &kp UP       &kp PG_DN    &none
+			    &none        &mmv M_LT      &mmv M_DN      &mmv M_RT        &none           &kp END      &kp LEFT     &kp DOWN     &kp RIGHT    &none
 			    &to SET      &mkp RCLK      &mkp MCLK      &mkp LCLK        &none           &none        &none        &none        &none        &none
 				                            &to BASE       &kp TAB          &kp SPACE       &kp BSPC     &kp ENTER    &none
 		>;
