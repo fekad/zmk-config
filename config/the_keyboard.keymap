@@ -42,15 +42,6 @@
 
 / {
     behaviors {
-        smm: sticky_modifier_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "sticky modifier mods";
-            #binding-cells = <2>;
-            tapping-term-ms = <1000>;
-            // quick-tap-ms = <0>;
-            flavor = "balanced";
-            bindings = <&sk>, <&kp>;
-        };
         lhm: left_hand_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "left hand homerow mods";
@@ -112,7 +103,7 @@
 				&kp Q        &kp W        &kp E        &kp R               &kp T               &kp Y            &kp U        &kp I        &kp O        &kp P
 				&lhm LCTRL A &lhm LALT S  &lhm LCMD D  &lhm LSHFT F        &kp G               &kp H            &rhm RSHFT J &rhm RCMD K  &rhm RALT L  &rhm RCTRL SEMI
 				&kp Z        &kp X        &kp C        &kp V               &kp B               &kp N            &kp M        &kp COMMA    &kp DOT      &kp SLASH
-		 		                          &mo NAV      &mt LG(SPACE) SPACE &sk LSHIFT          &smm LCMD LCMD   &sl SYM      &smm LCTRL LCTRL
+		 		                          &mo NAV      &mt LG(SPACE) SPACE &sk LSHIFT          &sk LCMD         &sl SYM      &sk LCTRL
 			>;
 		};
 
@@ -126,10 +117,10 @@
 		//                 |  BASE |  TAB  | SPACE |   |  BSPC | ENTER |  NUM  |
 		symbol_layer {
 			bindings = <
-				&kp ESC        &kp LS(N2)      &kp LS(N3)       &kp LS(N4)     &kp LS(N5)          &kp LS(N6)   &kp LS(N7)      &kp LS(N8)      &kp EXCL        &kp BSPC
-				&lhm LCTRL TAB &lhm LALT EQUAL &lhm LCMD UNDER  &lhm LSHFT SQT &kp COLON           &kp BSLH     &rhm RSHFT LPAR &rhm RSHFT RPAR &rhm RSHFT PIPE &rhm RSHFT ENTER
-				&kp GRAVE      &kp PLUS        &kp MINUS        &kp DQT        &kp TILDE           &kp LBRC     &kp LBKT        &kp RBKT        &kp RBRC        &to NAV
-		 		                               &to BASE         &kp TAB        &mt LG(SPACE) SPACE &kp BSPC     &kp ENTER       &to NUM
+				&kp ESC        &kp LS(N2)      &kp LS(N3)       &kp LS(N4)          &kp LS(N5)          &kp LS(N6)   &kp LS(N7)      &kp LS(N8)      &kp EXCL        &kp BSPC
+				&lhm LCTRL TAB &lhm LALT EQUAL &lhm LCMD UNDER  &lhm LSHFT SQT      &kp COLON           &kp BSLH     &rhm RSHFT LPAR &rhm RSHFT RPAR &rhm RSHFT PIPE &rhm RSHFT ENTER
+				&kp GRAVE      &kp PLUS        &kp MINUS        &kp DQT             &kp TILDE           &kp LBRC     &kp LBKT        &kp RBKT        &kp RBRC        &to NAV
+		 		                               &to BASE         &mt LG(SPACE) SPACE &sk LSHIFT          &sk LCMD     &sl SYM         &sk LCTRL
 			>;
 		};
 
@@ -140,10 +131,10 @@
 		//                 | BASE  |  TAB  | SPACE |   |  BSPC | ENTER |       |
 		number_layer {
 			bindings = <
-				&kp ESC      &none        &kp C_BRI_DN &kp C_BRI_UP &kp UNDER       &kp MINUS    &kp N7       &kp N8       &kp N9       &kp SLASH
-			    &kp TAB      &none        &kp C_VOL_DN &kp C_VOL_UP &kp PLUS        &kp EQUAL    &kp N4       &kp N5       &kp N6       &kp STAR
-			    &to SET      &kp C_PREV   &kp C_PP     &kp C_NEXT   &kp DOT         &kp N0       &kp N1       &kp N2       &kp N3       &none
-				                          &to BASE     &kp TAB      &kp SPACE       &kp BSPC     &kp ENTER    &none
+				&kp ESC      &none        &kp C_BRI_DN &kp C_BRI_UP        &kp UNDER           &kp MINUS    &kp N7       &kp N8       &kp N9       &kp SLASH
+			    &kp TAB      &none        &kp C_VOL_DN &kp C_VOL_UP        &kp PLUS            &kp EQUAL    &kp N4       &kp N5       &kp N6       &kp STAR
+			    &to SET      &kp C_PREV   &kp C_PP     &kp C_NEXT          &kp DOT             &kp N0       &kp N1       &kp N2       &kp N3       &none
+		 		                          &to BASE     &mt LG(SPACE) SPACE &sk LSHIFT          &sk LCMD     &sl SYM      &sk LCTRL
 			>;
 		};
 
@@ -156,10 +147,10 @@
 		//                 | BASE  |  TAB  | SPACE |   |  BSPC | ENTER |       |
 		navigation_layer {
 			bindings = <
-				&none        &mkp RCLK      &mmv M_UP      &mkp LCLK        &none           &kp HOME     &kp PG_UP    &kp UP       &kp PG_DN    &none
-			    &none        &mmv M_LT      &mmv M_DN      &mmv M_RT        &none           &kp END      &kp LEFT     &kp DOWN     &kp RIGHT    &none
-			    &to SET      &mkp RCLK      &mkp MCLK      &mkp LCLK        &none           &none        &none        &none        &none        &none
-				                            &to BASE       &kp TAB          &kp SPACE       &kp BSPC     &kp ENTER    &none
+				&none        &mkp RCLK      &mmv M_UP      &mkp LCLK           &none           &kp HOME     &kp PG_UP    &kp UP       &kp PG_DN    &none
+			    &none        &mmv M_LT      &mmv M_DN      &mmv M_RT           &none           &kp END      &kp LEFT     &kp DOWN     &kp RIGHT    &none
+			    &to SET      &mkp RCLK      &mkp MCLK      &mkp LCLK           &none           &none        &none        &none        &none        &none
+		 		                            &to BASE       &mt LG(SPACE) SPACE &sk LSHIFT      &sk LCMD     &sl SYM      &sk LCTRL
 		>;
 		};
 
@@ -170,10 +161,10 @@
 		//                 | BASE  |  TAB  | SPACE |   |  BSPC | ENTER |       |
 		setting_layer {
 			bindings = <
-				&out OUT_BLE &out OUT_USB &none        &none        &bt BT_CLR      &none        &kp F7       &kp F8       &kp F9      &kp F12
-			    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none           &none        &kp F4       &kp F5       &kp F6      &kp F11
-			    &none        &none        &none        &none        &none           &none        &kp F1       &kp F2       &kp F3      &kp F10
-				                          &to BASE     &kp TAB      &kp SPACE       &kp BSPC     &kp ENTER    &none
+				&out OUT_BLE &out OUT_USB &none        &none               &bt BT_CLR      &none        &kp F7       &kp F8       &kp F9      &kp F12
+			    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3        &none           &none        &kp F4       &kp F5       &kp F6      &kp F11
+			    &none        &none        &none        &none               &none           &none        &kp F1       &kp F2       &kp F3      &kp F10
+		 	                              &to BASE     &mt LG(SPACE) SPACE &sk LSHIFT      &sk LCMD     &sl SYM      &sk LCTRL
 		>;
 		};
 
