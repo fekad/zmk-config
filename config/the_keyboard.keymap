@@ -92,6 +92,16 @@
 		// 	>;
 		// };
 
+		// home row mod
+		// base_layer {
+		// 	bindings = <
+		// 		&kp Q        &kp W        &kp E        &kp R               &kp T               &kp Y            &kp U        &kp I        &kp O        &kp P
+		// 		&lhm LCTRL A &lhm LALT S  &lhm LCMD D  &lhm LSHFT F        &kp G               &kp H            &rhm RSHFT J &rhm RCMD K  &rhm RALT L  &rhm RCTRL SEMI
+		// 		&kp Z        &kp X        &kp C        &kp V               &kp B               &kp N            &kp M        &kp COMMA    &kp DOT      &kp SLASH
+		//  		                          &mo NAV      &mt LG(SPACE) SPACE &sk LSHIFT          &sk LCMD         &sl SYM      &sk LCTRL
+		// 	>;
+		// };
+
 		// This is a simple qwerty layout
 		// -------------------------------------------------------------------------------------
 		// |   Q   |   W   |   E   |   R   |   T   |   |   Y   |   U   |   I   |   O   |   P   |
@@ -100,10 +110,10 @@
 		//                 |       |  TAB  |  SPC  |   |  BSPC |  ENT  |  SYM  |
 		base_layer {
 			bindings = <
-				&kp Q        &kp W        &kp E        &kp R               &kp T               &kp Y            &kp U        &kp I        &kp O        &kp P
-				&lhm LCTRL A &lhm LALT S  &lhm LCMD D  &lhm LSHFT F        &kp G               &kp H            &rhm RSHFT J &rhm RCMD K  &rhm RALT L  &rhm RCTRL SEMI
-				&kp Z        &kp X        &kp C        &kp V               &kp B               &kp N            &kp M        &kp COMMA    &kp DOT      &kp SLASH
-		 		                          &mo NAV      &mt LG(SPACE) SPACE &sk LSHIFT          &sk LCMD         &sl SYM      &sk LCTRL
+				&mt LG(Q) Q  &mt LG(W) W  &mt LG(E) E  &mt LG(R) R         &mt LG(T) T         &mt LG(Y) Y      &mt LG(U) U  &mt LG(I) I         &mt LG(O) O     &mt LG(P) P
+				&mt LG(A) A  &mt LG(S) S  &mt LG(D) D  &mt LG(F) F         &mt LG(G) G         &mt LG(H) H      &mt LG(J) J  &mt LG(K) K         &mt LG(L) L     &mt LG(SEMI) SEMI
+				&mt LG(Z) Z  &mt LG(X) X  &mt LG(C) C  &mt LG(V) V         &mt LG(B) B         &mt LG(N) N      &mt LG(M) M  &mt LG(COMMA) COMMA &mt LG(DOT) DOT &mt LG(SLASH) SLASH
+		 		                          &mo NAV      &mt LG(SPACE) SPACE &sk LSHIFT          &sk LALT         &sl SYM      &sk LCTRL
 			>;
 		};
 
@@ -134,7 +144,7 @@
 				&kp ESC      &none        &kp C_BRI_DN &kp C_BRI_UP        &kp UNDER           &kp MINUS    &kp N7       &kp N8       &kp N9       &kp SLASH
 			    &kp TAB      &none        &kp C_VOL_DN &kp C_VOL_UP        &kp PLUS            &kp EQUAL    &kp N4       &kp N5       &kp N6       &kp STAR
 			    &to SET      &kp C_PREV   &kp C_PP     &kp C_NEXT          &kp DOT             &kp N0       &kp N1       &kp N2       &kp N3       &none
-		 		                          &to BASE     &mt LG(SPACE) SPACE &sk LSHIFT          &sk LCMD     &none        &sk LCTRL
+		 		                          &to BASE     &mt LG(SPACE) SPACE &sk LSHIFT          &sk LALT     &none        &sk LCTRL
 			>;
 		};
 
@@ -150,7 +160,7 @@
 				&none        &mkp RCLK      &mmv M_UP      &mkp LCLK           &none           &kp HOME     &kp PG_UP    &kp UP       &kp PG_DN    &none
 			    &none        &mmv M_LT      &mmv M_DN      &mmv M_RT           &none           &kp END      &kp LEFT     &kp DOWN     &kp RIGHT    &none
 			    &none        &mkp RCLK      &mkp MCLK      &mkp LCLK           &none           &none        &none        &none        &none        &none
-		 		                            &to BASE       &mt LG(SPACE) SPACE &sk LSHIFT      &sk LCMD     &none      &sk LCTRL
+		 		                            &to BASE       &mt LG(SPACE) SPACE &sk LSHIFT      &sk LALT     &none      &sk LCTRL
 		>;
 		};
 
@@ -164,7 +174,7 @@
 				&out OUT_BLE &out OUT_USB &none        &none               &bt BT_CLR      &none        &kp F7       &kp F8       &kp F9      &kp F12
 			    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3        &none           &none        &kp F4       &kp F5       &kp F6      &kp F11
 			    &none        &none        &none        &none               &none           &none        &kp F1       &kp F2       &kp F3      &kp F10
-		 	                              &to BASE     &mt LG(SPACE) SPACE &sk LSHIFT      &sk LCMD     &none        &sk LCTRL
+		 	                              &to BASE     &mt LG(SPACE) SPACE &sk LSHIFT      &sk LALT     &none        &sk LCTRL
 		>;
 		};
 
