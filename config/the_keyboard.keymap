@@ -130,7 +130,7 @@
 				&kp ESC        &kp LS(N2)      &kp LS(N3)       &kp LS(N4)          &kp LS(N5)          &kp LS(N6)   &kp LS(N7)      &kp LS(N8)      &kp EXCL        &kp BSPC
 				&lhm LCTRL TAB &lhm LALT EQUAL &lhm LCMD UNDER  &lhm LSHFT SQT      &kp COLON           &kp BSLH     &rhm RSHFT LPAR &rhm RSHFT RPAR &rhm RSHFT PIPE &rhm RSHFT ENTER
 				&kp GRAVE      &kp PLUS        &kp MINUS        &kp DQT             &kp TILDE           &kp LBRC     &kp LBKT        &kp RBKT        &kp RBRC        &to NAV
-		 		                               &to BASE         &mt LG(SPACE) SPACE &sk LSHIFT          &sk LCMD     &lo NUM         &sk LCTRL
+		 		                               &to BASE         &mt LG(SPACE) SPACE &sk LSHIFT          &sk LCMD     &to NUM         &sk LCTRL
 			>;
 		};
 
