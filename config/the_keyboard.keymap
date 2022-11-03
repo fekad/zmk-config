@@ -42,6 +42,16 @@
 
 / {
     behaviors {
+        ht: hold_for_cmd {
+            compatible = "zmk,behavior-hold-tap";
+            label = "hold_for_cmd";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+    		quick-tap-ms = <125>;
+    		global-quick-tap;
+			bindings = <&kp>, <&kp>;
+        };
         lhm: left_hand_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "left hand homerow mods";
@@ -88,7 +98,7 @@
 		// 		&kp Q        &kp W        &kp F        &kp P        &kp B               &kp J        &kp L        &kp U        &kp Y        &kp SEMI
 		// 		&lhm LCTRL A &lhm LALT R  &lhm LCMD S  &lhm LSHFT T &kp G               &kp M        &rhm RSHFT N &rhm RCMD E  &rhm RALT I  &rhm RCTRL O
 		// 		&kp Z        &kp X        &kp C        &kp D        &kp V               &kp K        &kp H        &kp COMMA    &kp DOT      &kp SLASH
-		// 		                          &mo NAV      &kp TAB      &mt LG(SPACE) SPACE &kp BSPC     &kp ENTER    &sl SYM
+		// 		                          &mo NAV      &kp TAB      &ht LG(SPACE) SPACE &kp BSPC     &kp ENTER    &sl SYM
 		// 	>;
 		// };
 
@@ -98,7 +108,7 @@
 		// 		&kp Q        &kp W        &kp E        &kp R               &kp T               &kp Y            &kp U        &kp I        &kp O        &kp P
 		// 		&lhm LCTRL A &lhm LALT S  &lhm LCMD D  &lhm LSHFT F        &kp G               &kp H            &rhm RSHFT J &rhm RCMD K  &rhm RALT L  &rhm RCTRL SEMI
 		// 		&kp Z        &kp X        &kp C        &kp V               &kp B               &kp N            &kp M        &kp COMMA    &kp DOT      &kp SLASH
-		//  		                          &mo NAV      &mt LG(SPACE) SPACE &sk LSHIFT          &sk LCMD         &sl SYM      &sk LCTRL
+		//  		                          &mo NAV      &ht LG(SPACE) SPACE &sk LSHIFT          &sk LCMD         &sl SYM      &sk LCTRL
 		// 	>;
 		// };
 
@@ -110,10 +120,10 @@
 		//                 |       |  TAB  |  SPC  |   |  BSPC |  ENT  |  SYM  |
 		base_layer {
 			bindings = <
-				&mt LG(Q) Q  &mt LG(W) W  &mt LG(E) E  &mt LG(R) R         &mt LG(T) T         &mt LG(Y) Y      &mt LG(U) U  &mt LG(I) I         &mt LG(O) O     &mt LG(P) P
-				&mt LG(A) A  &mt LG(S) S  &mt LG(D) D  &mt LG(F) F         &mt LG(G) G         &mt LG(H) H      &mt LG(J) J  &mt LG(K) K         &mt LG(L) L     &mt LG(SEMI) SEMI
-				&mt LG(Z) Z  &mt LG(X) X  &mt LG(C) C  &mt LG(V) V         &mt LG(B) B         &mt LG(N) N      &mt LG(M) M  &mt LG(COMMA) COMMA &mt LG(DOT) DOT &mt LG(SLASH) SLASH
-		 		                          &mo NAV      &mt LG(SPACE) SPACE &sk LSHIFT          &sk LALT         &sl SYM      &sk LCTRL
+				&ht LG(Q) Q  &ht LG(W) W  &ht LG(E) E  &ht LG(R) R         &ht LG(T) T         &ht LG(Y) Y      &ht LG(U) U  &ht LG(I) I         &ht LG(O) O     &ht LG(P) P
+				&ht LG(A) A  &ht LG(S) S  &ht LG(D) D  &ht LG(F) F         &ht LG(G) G         &ht LG(H) H      &ht LG(J) J  &ht LG(K) K         &ht LG(L) L     &ht LG(SEMI) SEMI
+				&ht LG(Z) Z  &ht LG(X) X  &ht LG(C) C  &ht LG(V) V         &ht LG(B) B         &ht LG(N) N      &ht LG(M) M  &ht LG(COMMA) COMMA &ht LG(DOT) DOT &ht LG(SLASH) SLASH
+		 		                          &mo NAV      &ht LG(SPACE) SPACE &sk LSHIFT          &sk LALT         &sl SYM      &sk LCTRL
 			>;
 		};
 
@@ -130,7 +140,7 @@
 				&kp ESC        &kp LS(N2)      &kp LS(N3)       &kp LS(N4)          &kp LS(N5)          &kp LS(N6)   &kp LS(N7)      &kp LS(N8)      &kp EXCL        &kp BSPC
 				&lhm LCTRL TAB &lhm LALT EQUAL &lhm LCMD UNDER  &lhm LSHFT SQT      &kp COLON           &kp BSLH     &rhm RSHFT LPAR &rhm RSHFT RPAR &rhm RSHFT PIPE &rhm RSHFT ENTER
 				&kp GRAVE      &kp PLUS        &kp MINUS        &kp DQT             &kp TILDE           &kp LBRC     &kp LBKT        &kp RBKT        &kp RBRC        &to NAV
-		 		                               &to BASE         &mt LG(SPACE) SPACE &sk LSHIFT          &sk LCMD     &to NUM         &sk LCTRL
+		 		                               &to BASE         &ht LG(SPACE) SPACE &sk LSHIFT          &sk LCMD     &to NUM         &sk LCTRL
 			>;
 		};
 
@@ -144,7 +154,7 @@
 				&kp ESC      &none        &kp C_BRI_DN &kp C_BRI_UP        &kp UNDER           &kp MINUS    &kp N7       &kp N8       &kp N9       &kp SLASH
 			    &kp TAB      &none        &kp C_VOL_DN &kp C_VOL_UP        &kp PLUS            &kp EQUAL    &kp N4       &kp N5       &kp N6       &kp STAR
 			    &to SET      &kp C_PREV   &kp C_PP     &kp C_NEXT          &kp DOT             &kp N0       &kp N1       &kp N2       &kp N3       &none
-		 		                          &to BASE     &mt LG(SPACE) SPACE &sk LSHIFT          &sk LALT     &none        &sk LCTRL
+		 		                          &to BASE     &ht LG(SPACE) SPACE &sk LSHIFT          &sk LALT     &none        &sk LCTRL
 			>;
 		};
 
@@ -160,7 +170,7 @@
 				&none        &mkp RCLK      &mmv M_UP      &mkp LCLK           &none           &kp HOME     &kp PG_UP    &kp UP       &kp PG_DN    &none
 			    &none        &mmv M_LT      &mmv M_DN      &mmv M_RT           &none           &kp END      &kp LEFT     &kp DOWN     &kp RIGHT    &none
 			    &none        &mkp RCLK      &mkp MCLK      &mkp LCLK           &none           &none        &none        &none        &none        &none
-		 		                            &to BASE       &mt LG(SPACE) SPACE &sk LSHIFT      &sk LALT     &none      &sk LCTRL
+		 		                            &to BASE       &ht LG(SPACE) SPACE &sk LSHIFT      &sk LALT     &none      &sk LCTRL
 		>;
 		};
 
@@ -174,7 +184,7 @@
 				&out OUT_BLE &out OUT_USB &none        &none               &bt BT_CLR      &none        &kp F7       &kp F8       &kp F9      &kp F12
 			    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3        &none           &none        &kp F4       &kp F5       &kp F6      &kp F11
 			    &none        &none        &none        &none               &none           &none        &kp F1       &kp F2       &kp F3      &kp F10
-		 	                              &to BASE     &mt LG(SPACE) SPACE &sk LSHIFT      &sk LALT     &none        &sk LCTRL
+		 	                              &to BASE     &ht LG(SPACE) SPACE &sk LSHIFT      &sk LALT     &none        &sk LCTRL
 		>;
 		};
 
