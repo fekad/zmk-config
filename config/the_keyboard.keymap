@@ -156,7 +156,7 @@
 			bindings = <
 				&kp ESC      &NAV1            &mmv M_UP2     &none               &kp LG(X)       &kp HOME            &kp PG_UP        &kp UP       &kp PG_DN         &none
 			    &kp TAB      &mmv M_LT2       &mmv M_DN2     &mmv M_RT2          &kp LG(C)       &kp END             &kp LEFT         &kp DOWN     &kp RIGHT         &none
-			    &to SET      &mkp RCLK        &mkp MCLK      &mkp LCLK           &kp LG(v)       &mkp LCLK           &kp LG(LA(LEFT)) &none        &kp LG(LA(RIGHT)) &none
+			    &to SET      &mkp RCLK        &mkp MCLK      &mkp LCLK           &kp LG(V)       &mkp LCLK           &kp LG(LA(LEFT)) &none        &kp LG(LA(RIGHT)) &none
 		 		                              &sk LCTRL      &to BASE            &sk LCMD        &ht LG(SPACE) SPACE &none            &sk LALT
 		>;
 		};
