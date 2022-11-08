@@ -30,7 +30,7 @@
 
 &sk {
     release-after-ms = <2000>;
-    quick-release;
+    // quick-release;
 };
 
 &sl {
@@ -67,14 +67,14 @@
         // |   A   |   R   |   S   |   T   |   G   |   |   M   |   N   |   E   |   I   |   O   |
         // |   Z   |   X   |   C   |   D   |   V   |   |   K   |   H   |   ,<  |   .>  |   /?  |
         //                 |       |  TAB  |  SPC  |   |  BSPC |  ENT  |  SYM  |
-        base_layer {
-            bindings = <
-                &kp Q               &kp W               &kp F               &kp P               &kp B                   &kp J               &kp L               &kp U               &kp Y               &kp SEMI
-                &kp A               &kp R               &kp S               &kp T               &kp G                   &kp M               &kp N               &kp E               &kp I               &kp O
-                &kp Z               &kp X               &kp C               &kp D               &kp V                   &kp K               &kp H               &kp COMMA           &kp DOT             &kp SLASH
-                                                        &sk LCTRL           &mo NAV             &sk LSHIFT              &sl SYM             &ht LG(SPACE) SPACE &sk LALT
-            >;
-        };
+        // base_layer {
+        //     bindings = <
+        //         &kp Q               &kp W               &kp F               &kp P               &kp B                   &kp J               &kp L               &kp U               &kp Y               &kp SEMI
+        //         &kp A               &kp R               &kp S               &kp T               &kp G                   &kp M               &kp N               &kp E               &kp I               &kp O
+        //         &kp Z               &kp X               &kp C               &kp D               &kp V                   &kp K               &kp H               &kp COMMA           &kp DOT             &kp SLASH
+        //                                                 &sk LCTRL           &mo NAV             &sk LSHIFT              &ht LG(SPACE) SPACE &sl SYM             &sk LALT
+        //     >;
+        // };
 
         // -------------------------------------------------------------------------------------
         // |   Q   |   W   |   E   |   R   |   T   |   |   Y   |   U   |   I   |   O   |   P   |
@@ -86,7 +86,7 @@
                 &ht LG(Q) Q         &ht LG(W) W         &ht LG(E) E         &ht LG(R) R         &ht LG(T) T             &ht LG(Y) Y         &ht LG(U) U         &ht LG(I) I         &ht LG(O) O         &ht LG(P) P
                 &ht LG(A) A         &ht LG(S) S         &ht LG(D) D         &ht LG(F) F         &ht LG(G) G             &ht LG(H) H         &ht LG(J) J         &ht LG(K) K         &ht LG(L) L         &ht LG(SEMI) SEMI
                 &ht LG(Z) Z         &ht LG(X) X         &ht LG(C) C         &ht LG(V) V         &ht LG(B) B             &ht LG(N) N         &ht LG(M) M         &ht LG(COMMA) COMMA &ht LG(DOT) DOT     &ht LG(SLASH) SLASH
-                                                        &sk LCTRL           &mo NAV             &sk LSHIFT              &sl SYM             &ht LG(SPACE) SPACE &sk LALT
+                                                        &sk LCTRL           &mo NAV             &sk LSHIFT              &ht LG(SPACE) SPACE &sl SYM             &sk LALT
             >;
         };
 
@@ -100,7 +100,7 @@
                 &kp ESC             &kp LS(N2)          &kp LS(N3)          &kp LS(N4)          &kp LS(N5)              &kp LS(N6)          &kp LS(N7)          &kp LS(N8)          &kp EXCL            &kp BSPC
                 &kp TAB             &kp EQUAL           &kp UNDER           &kp SQT             &kp COLON               &kp BSLH            &kp LPAR            &kp RPAR            &kp PIPE            &kp ENTER
                 &kp GRAVE           &kp PLUS            &kp MINUS           &kp DQT             &kp TILDE               &kp LBRC            &kp LBKT            &kp RBKT            &kp RBRC            &to NAV
-                                                        &sk LCTRL           &to BASE            &sk LCMD                &to NUM             &ht LG(SPACE) SPACE &sk LALT
+                                                        &sk LCTRL           &to BASE            &sk LCMD                &ht LG(SPACE) SPACE &to NUM             &sk LALT
             >;
         };
 
@@ -114,7 +114,7 @@
                 &kp ESC             &none               &kp C_BRI_DN        &kp C_BRI_UP        &kp UNDER               &kp MINUS           &kp N7              &kp N8              &kp N9              &kp SLASH
                 &kp TAB             &none               &kp C_VOL_DN        &kp C_VOL_UP        &kp PLUS                &kp EQUAL           &kp N4              &kp N5              &kp N6              &kp STAR
                 &to SET             &kp C_PREV          &kp C_PP            &kp C_NEXT          &kp DOT                 &kp N0              &kp N1              &kp N2              &kp N3              &none
-                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &none               &ht LG(SPACE) SPACE &sk LALT
+                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &ht LG(SPACE) SPACE &none               &sk LALT
             >;
         };
 
@@ -128,7 +128,7 @@
                 &kp ESC             &none               &mmv M_UP           &none               &kp LG(X)               &kp HOME            &kp PG_UP           &kp UP              &kp PG_DN           &kp BSPC
                 &kp TAB             &mmv M_LT           &mmv M_DN           &mmv M_RT           &kp LG(C)               &kp END             &kp LEFT            &kp DOWN            &kp RIGHT           &kp ENTER
                 &to SET             &mkp RCLK           &mkp MCLK           &mkp LCLK           &kp LG(V)               &mkp LCLK           &kp LG(LA(LEFT))    &none               &kp LG(LA(RIGHT))   &none
-                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &none               &ht LG(SPACE) SPACE &sk LALT
+                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &ht LG(SPACE) SPACE &none               &sk LALT
             >;
         };
 
@@ -142,7 +142,7 @@
                 &out OUT_BLE        &out OUT_USB        &none               &none               &bt BT_CLR              &none               &kp F7              &kp F8              &kp F9              &kp F12
                 &bt BT_SEL 0        &bt BT_SEL 1        &bt BT_SEL 2        &bt BT_SEL 3        &none                   &none               &kp F4              &kp F5              &kp F6              &kp F11
                 &none               &none               &none               &none               &none                   &none               &kp F1              &kp F2              &kp F3              &kp F10
-                                                        &sk LCTRL           &to BASE            &sk LCMD                &none               &ht LG(SPACE) SPACE &sk LALT
+                                                        &sk LCTRL           &to BASE            &sk LCMD                &ht LG(SPACE) SPACE &none               &sk LALT
             >;
         };
     };
@@ -153,7 +153,7 @@
 // https://github.com/weteor/3W6/tree/main/dev/keymap
 // https://www.youtube.com/watch?v=S0bBmcoVsm8
 // https://configure.zsa.io/moonlander/layouts/daEvx/v96pr/0
-
+// https://configure.zsa.io/moonlander/layouts/xKZ0K/latest/2
 
 // Ben Vallack
 // L1
