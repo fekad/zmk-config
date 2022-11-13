@@ -13,10 +13,10 @@
 #define SET      4
 
 
-#define M_UP MOVE_VERT(-1600)
-#define M_DN MOVE_VERT(1600)
-#define M_LT MOVE_HOR(-1600)
-#define M_RT MOVE_HOR(1600)
+#define M_UP MOVE_VERT(-1200)
+#define M_DN MOVE_VERT(1200)
+#define M_LT MOVE_HOR(-1200)
+#define M_RT MOVE_HOR(1200)
 
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
@@ -40,11 +40,19 @@
 &mmv {
     delay-ms = <0>;
     time-to-max-speed-ms = <0>;
-    acceleration-exponent=<1>;
+    // acceleration-exponent=<1>;
 };
 
 / {
     behaviors {
+        tdl: tap_dance_layers {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_LAYERS";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sl SYM>, <&to NUM>, <&to NAV>;
+        };
+
         ht: hold_for_cmd {
             compatible = "zmk,behavior-hold-tap";
             label = "hold_for_cmd";
@@ -72,7 +80,7 @@
         //         &kp Q               &kp W               &kp F               &kp P               &kp B                   &kp J               &kp L               &kp U               &kp Y               &kp SEMI
         //         &kp A               &kp R               &kp S               &kp T               &kp G                   &kp M               &kp N               &kp E               &kp I               &kp O
         //         &kp Z               &kp X               &kp C               &kp D               &kp V                   &kp K               &kp H               &kp COMMA           &kp DOT             &kp SLASH
-        //                                                 &sk LCTRL           &mo NAV             &sk LSHIFT              &ht LG(SPACE) SPACE &sl SYM             &sk LALT
+        //                                                 &sk LCTRL           &mo NAV             &sk LSHIFT              &ht LG(SPACE) SPACE &tdl                &sk LALT
         //     >;
         // };
 
@@ -86,35 +94,35 @@
                 &ht LG(Q) Q         &ht LG(W) W         &ht LG(E) E         &ht LG(R) R         &ht LG(T) T             &ht LG(Y) Y         &ht LG(U) U         &ht LG(I) I         &ht LG(O) O         &ht LG(P) P
                 &ht LG(A) A         &ht LG(S) S         &ht LG(D) D         &ht LG(F) F         &ht LG(G) G             &ht LG(H) H         &ht LG(J) J         &ht LG(K) K         &ht LG(L) L         &ht LG(SEMI) SEMI
                 &ht LG(Z) Z         &ht LG(X) X         &ht LG(C) C         &ht LG(V) V         &ht LG(B) B             &ht LG(N) N         &ht LG(M) M         &ht LG(COMMA) COMMA &ht LG(DOT) DOT     &ht LG(SLASH) SLASH
-                                                        &sk LCTRL           &mo NAV             &sk LSHIFT              &ht LG(SPACE) SPACE &sl SYM             &sk LALT
+                                                        &sk LCTRL           &mo NAV             &sk LSHIFT              &ht LG(SPACE) SPACE &tdl                &sk LALT
             >;
         };
 
         // -------------------------------------------------------------------------------------
         // |  ESC  |   @   |   #   |   $   |   %   |   |   ^   |   &   |   *   |   !   | BSPC  |
         // |  TAB  |   =   |   _   |   '   |   :   |   |   \   |   (   |   )   |   |   | ENTER |
-        // |   `   |   +   |   -   |   "   |   ~   |   |   {   |   [   |   ]   |   }   | NAV   |
+        // |   `   |   +   |   -   |   "   |   ~   |   |   {   |   [   |   ]   |   }   |       |
         //                 | CTRL  | BASE  |  CMD  |   | SPACE |  NUM  |  ALT  |
         symbol_layer {
             bindings = <
                 &kp ESC             &ht LG(AT) AT       &ht LG(HASH) HASH   &ht LG(DLLR) DLLR   &ht LG(PRCNT) PRCNT     &ht LG(CARET) CARET &ht LG(AMPS) AMPS   &ht LG(STAR) STAR   &ht LG(EXCL) EXCL   &ht LG(BSPC) BSPC
                 &kp TAB             &ht LG(EQUAL) EQUAL &ht LG(UNDER) UNDER &ht LG(SQT) SQT     &ht LG(COLON) COLON     &ht LG(BSLH) BSLH   &ht LG(LPAR) LPAR   &ht LG(RPAR) RPAR   &ht LG(PIPE) PIPE   &ht LG(ENTER) ENTER
-                &ht LG(GRAVE) GRAVE &ht LG(PLUS) PLUS   &ht LG(MINUS) MINUS &ht LG(DQT) DQT     &ht LG(TILDE) TILDE     &ht LG(LBRC) LBRC   &ht LG(LBKT) LBKT   &ht LG(RBKT) RBKT   &ht LG(RBRC) RBRC   &to NAV
-                                                        &sk LCTRL           &to BASE            &sk LCMD                &ht LG(SPACE) SPACE &to NUM             &sk LALT
+                &ht LG(GRAVE) GRAVE &ht LG(PLUS) PLUS   &ht LG(MINUS) MINUS &ht LG(DQT) DQT     &ht LG(TILDE) TILDE     &ht LG(LBRC) LBRC   &ht LG(LBKT) LBKT   &ht LG(RBKT) RBKT   &ht LG(RBRC) RBRC   &none
+                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &sk LCMD            &tdl                &sk LALT
             >;
         };
 
         // -------------------------------------------------------------------------------------
         // |  ESC  |       | BR-   |  BR+  |   _   |   |   -   |   7   |   8   |   9   |   /   |
         // |  TAB  |       | VOL-  | VOL+  |   +   |   |   =   |   4   |   5   |   6   |   *   |
-        // |   `   | PREV  | PLAY  | NEXT  |   .   |   |   0   |zozazx a   1   |   2   |   3   |       |
+        // |   `   | PREV  | PLAY  | NEXT  |   .   |   |   0   |   1   |   2   |   3   |       |
         //                 | CTRL  | BASE  | SHIFT |   | SPACE |       |  ALT  |
         number_layer {
             bindings = <
                 &kp ESC             &none               &kp C_BRI_DN        &kp C_BRI_UP        &kp UNDER               &kp MINUS           &kp N7              &kp N8              &kp N9              &kp SLASH
                 &kp TAB             &none               &kp C_VOL_DN        &kp C_VOL_UP        &kp PLUS                &kp EQUAL           &kp N4              &kp N5              &kp N6              &kp STAR
                 &kp GRAVE           &kp C_PREV          &kp C_PP            &kp C_NEXT          &kp DOT                 &kp N0              &kp N1              &kp N2              &kp N3              &none
-                                                        &sk LCTRL           &to BASE            &sk LCMD                &ht LG(SPACE) SPACE &none               &sk LALT
+                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &sk LCMD            &tdl                &sk LALT
             >;
         };
 
@@ -128,7 +136,7 @@
                 &kp ESC             &none               &mmv M_UP           &none               &kp LG(X)               &kp HOME            &kp PG_UP           &kp UP              &kp PG_DN           &kp BSPC
                 &kp TAB             &mmv M_LT           &mmv M_DN           &mmv M_RT           &kp LG(C)               &kp END             &kp LEFT            &kp DOWN            &kp RIGHT           &kp ENTER
                 &to SET             &mkp RCLK           &mkp MCLK           &mkp LCLK           &kp LG(V)               &mkp LCLK           &kp LG(LA(LEFT))    &none               &kp LG(LA(RIGHT))   &none
-                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &ht LG(SPACE) SPACE &none               &sk LALT
+                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &sk LCMD            &ltd                &sk LALT
             >;
         };
 
@@ -142,7 +150,7 @@
                 &out OUT_BLE        &out OUT_USB        &none               &none               &bt BT_CLR              &none               &kp F7              &kp F8              &kp F9              &kp F12
                 &bt BT_SEL 0        &bt BT_SEL 1        &bt BT_SEL 2        &bt BT_SEL 3        &none                   &none               &kp F4              &kp F5              &kp F6              &kp F11
                 &none               &none               &none               &none               &none                   &none               &kp F1              &kp F2              &kp F3              &kp F10
-                                                        &sk LCTRL           &to BASE            &sk LCMD                &ht LG(SPACE) SPACE &none               &sk LALT
+                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &sk LCMD            &none               &sk LALT
             >;
         };
     };
