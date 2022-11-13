@@ -129,13 +129,13 @@
         // -------------------------------------------------------------------------------------
         // |  ESC  |       |  MUP  |       |  CUT  |   | HOME  | PGUP  |  UP   | PGDN  | BSPC  |
         // |  TAB  |  MLT  |  MDN  |  MRT  | COPY  |   |  END  | LEFT  | DOWN  | RIGHT | ENTER |
-        // |  SET  | RCLK  | MCLK  | LCLK  | PASTE |   | LCLK  | BACK  |       |  FWD  |       |
+        // |   `   | RCLK  | MCLK  | LCLK  | PASTE |   | LCLK  | BACK  |       |  FWD  |       |
         //                 | CTRL  | BASE  | SHIFT |   | SPACE |       |  ALT  |
         navigation_layer {
             bindings = <
-                &kp ESC             &none               &mmv M_UP           &none               &kp LG(X)               &kp HOME            &kp PG_UP           &kp UP              &kp PG_DN           &kp BSPC
-                &kp TAB             &mmv M_LT           &mmv M_DN           &mmv M_RT           &kp LG(C)               &kp END             &kp LEFT            &kp DOWN            &kp RIGHT           &kp ENTER
-                &to SET             &mkp RCLK           &mkp MCLK           &mkp LCLK           &kp LG(V)               &mkp LCLK           &kp LG(LA(LEFT))    &none               &kp LG(LA(RIGHT))   &none
+                &ht LG(ESC) ESC     &none               &mmv M_UP           &none               &kp LG(X)               &kp HOME            &kp PG_UP           &kp UP              &kp PG_DN           &kp BSPC
+                &ht LG(TAB) TAB     &mmv M_LT           &mmv M_DN           &mmv M_RT           &kp LG(C)               &kp END             &kp LEFT            &kp DOWN            &kp RIGHT           &kp ENTER
+                &ht LG(GRAVE) GRAVE &mkp RCLK           &mkp MCLK           &mkp LCLK           &kp LG(V)               &mkp LCLK           &kp LG(LA(LEFT))    &none               &kp LG(LA(RIGHT))   &none
                                                         &sk LCTRL           &to BASE            &sk LSHIFT              &sk LCMD            &tdl                &sk LALT
             >;
         };
