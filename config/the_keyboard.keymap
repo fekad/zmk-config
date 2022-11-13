@@ -24,9 +24,9 @@
     quick_tap_ms = <200>;
 };
 
-&mt {
-    tapping-term-ms = <400>;
-};
+// &mt {
+//     tapping-term-ms = <400>;
+// };
 
 &sk {
     release-after-ms = <2000>;
@@ -39,8 +39,8 @@
 
 &mmv {
     delay-ms = <0>;
-    time-to-max-speed-ms = <400>;
-    acceleration-exponent=<2>;
+    time-to-max-speed-ms = <0>;
+    acceleration-exponent=<1>;
 };
 
 / {
@@ -50,8 +50,8 @@
             label = "hold_for_cmd";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <125>;
+            tapping-term-ms = <400>;
+            quick-tap-ms = <200>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
@@ -97,9 +97,9 @@
         //                 | CTRL  | BASE  |  CMD  |   | SPACE |  NUM  |  ALT  |
         symbol_layer {
             bindings = <
-                &kp ESC             &kp LS(N2)          &kp LS(N3)          &kp LS(N4)          &kp LS(N5)              &kp LS(N6)          &kp LS(N7)          &kp LS(N8)          &kp EXCL            &kp BSPC
-                &kp TAB             &kp EQUAL           &kp UNDER           &kp SQT             &kp COLON               &kp BSLH            &kp LPAR            &kp RPAR            &kp PIPE            &kp ENTER
-                &kp GRAVE           &kp PLUS            &kp MINUS           &kp DQT             &kp TILDE               &kp LBRC            &kp LBKT            &kp RBKT            &kp RBRC            &to NAV
+                &kp ESC             &ht LG(AT) AT       &ht LG(HASH) HASH   &ht LG(DLLR) DLLR   &ht LG(PRCNT) PRCNT     &ht LG(CARET) CARET &ht LG(AMPS) AMPS   &ht LG(STAR) STAR   &ht LG(EXCL) EXCL   &ht LG(BSPC) BSPC
+                &kp TAB             &ht LG(EQUAL) EQUAL &ht LG(UNDER) UNDER &ht LG(SQT) SQT     &ht LG(COLON) COLON     &ht LG(BSLH) BSLH   &ht LG(LPAR) LPAR   &ht LG(RPAR) RPAR   &ht LG(PIPE) PIPE   &ht LG(ENTER) ENTER
+                &ht LG(GRAVE) GRAVE &ht LG(PLUS) PLUS   &ht LG(MINUS) MINUS &ht LG(DQT) DQT     &ht LG(TILDE) TILDE     &ht LG(LBRC) LBRC   &ht LG(LBKT) LBKT   &ht LG(RBKT) RBKT   &ht LG(RBRC) RBRC   &to NAV
                                                         &sk LCTRL           &to BASE            &sk LCMD                &ht LG(SPACE) SPACE &to NUM             &sk LALT
             >;
         };
@@ -107,14 +107,14 @@
         // -------------------------------------------------------------------------------------
         // |  ESC  |       | BR-   |  BR+  |   _   |   |   -   |   7   |   8   |   9   |   /   |
         // |  TAB  |       | VOL-  | VOL+  |   +   |   |   =   |   4   |   5   |   6   |   *   |
-        // |  SET  | PREV  | PLAY  | NEXT  |   .   |   |   0   |   1   |   2   |   3   |       |
+        // |   `   | PREV  | PLAY  | NEXT  |   .   |   |   0   |zozazx a   1   |   2   |   3   |       |
         //                 | CTRL  | BASE  | SHIFT |   | SPACE |       |  ALT  |
         number_layer {
             bindings = <
                 &kp ESC             &none               &kp C_BRI_DN        &kp C_BRI_UP        &kp UNDER               &kp MINUS           &kp N7              &kp N8              &kp N9              &kp SLASH
                 &kp TAB             &none               &kp C_VOL_DN        &kp C_VOL_UP        &kp PLUS                &kp EQUAL           &kp N4              &kp N5              &kp N6              &kp STAR
-                &to SET             &kp C_PREV          &kp C_PP            &kp C_NEXT          &kp DOT                 &kp N0              &kp N1              &kp N2              &kp N3              &none
-                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &ht LG(SPACE) SPACE &none               &sk LALT
+                &kp GRAVE           &kp C_PREV          &kp C_PP            &kp C_NEXT          &kp DOT                 &kp N0              &kp N1              &kp N2              &kp N3              &none
+                                                        &sk LCTRL           &to BASE            &sk LCMD                &ht LG(SPACE) SPACE &none               &sk LALT
             >;
         };
 
