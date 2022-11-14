@@ -49,7 +49,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LAYERS";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <400>;
             bindings = <&sl SYM>, <&to NUM>, <&to NAV>;
         };
 
@@ -108,7 +108,7 @@
                 &kp ESC             &ht LG(AT) AT       &ht LG(HASH) HASH   &ht LG(DLLR) DLLR   &ht LG(PRCNT) PRCNT     &ht LG(CARET) CARET &ht LG(AMPS) AMPS   &ht LG(STAR) STAR   &ht LG(EXCL) EXCL   &ht LG(BSPC) BSPC
                 &kp TAB             &ht LG(EQUAL) EQUAL &ht LG(UNDER) UNDER &ht LG(SQT) SQT     &ht LG(COLON) COLON     &ht LG(BSLH) BSLH   &ht LG(LPAR) LPAR   &ht LG(RPAR) RPAR   &ht LG(PIPE) PIPE   &ht LG(ENTER) ENTER
                 &ht LG(GRAVE) GRAVE &ht LG(PLUS) PLUS   &ht LG(MINUS) MINUS &ht LG(DQT) DQT     &ht LG(TILDE) TILDE     &ht LG(LBRC) LBRC   &ht LG(LBKT) LBKT   &ht LG(RBKT) RBKT   &ht LG(RBRC) RBRC   &none
-                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &sk LCMD            &tdl                &sk LALT
+                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &sk LCMD            &trans              &sk LALT
             >;
         };
 
@@ -122,7 +122,7 @@
                 &kp ESC             &none               &kp C_BRI_DN        &kp C_BRI_UP        &kp UNDER               &kp MINUS           &kp N7              &kp N8              &kp N9              &kp SLASH
                 &kp TAB             &none               &kp C_VOL_DN        &kp C_VOL_UP        &kp PLUS                &kp EQUAL           &kp N4              &kp N5              &kp N6              &kp STAR
                 &kp GRAVE           &kp C_PREV          &kp C_PP            &kp C_NEXT          &kp DOT                 &kp N0              &kp N1              &kp N2              &kp N3              &none
-                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &sk LCMD            &tdl                &sk LALT
+                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &sk LCMD            &trans              &sk LALT
             >;
         };
 
@@ -133,10 +133,10 @@
         //                 | CTRL  | BASE  | SHIFT |   | SPACE |       |  ALT  |
         navigation_layer {
             bindings = <
-                &ht LG(ESC) ESC     &none               &mmv M_UP           &none               &kp LG(X)               &kp HOME            &kp PG_UP           &kp UP              &kp PG_DN           &kp BSPC
-                &ht LG(TAB) TAB     &mmv M_LT           &mmv M_DN           &mmv M_RT           &kp LG(C)               &kp END             &kp LEFT            &kp DOWN            &kp RIGHT           &kp ENTER
-                &ht LG(GRAVE) GRAVE &mkp RCLK           &mkp MCLK           &mkp LCLK           &kp LG(V)               &mkp LCLK           &kp LG(LA(LEFT))    &none               &kp LG(LA(RIGHT))   &none
-                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &sk LCMD            &tdl                &sk LALT
+                &kp ESC             &none               &mmv M_UP           &none               &kp LG(X)               &kp HOME            &kp PG_UP           &kp UP              &kp PG_DN           &kp BSPC
+                &kp TAB             &mmv M_LT           &mmv M_DN           &mmv M_RT           &kp LG(C)               &kp END             &kp LEFT            &kp DOWN            &kp RIGHT           &kp ENTER
+                &to SET             &mkp RCLK           &mkp MCLK           &mkp LCLK           &kp LG(V)               &mkp LCLK           &kp LG(LA(LEFT))    &none               &kp LG(LA(RIGHT))   &none
+                                                        &sk LCTRL           &to BASE            &sk LSHIFT              &sk LCMD            &trans              &sk LALT
             >;
         };
 
