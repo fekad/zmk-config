@@ -9,7 +9,9 @@ problems
 - one up and one down layer if posible
 - better way to change devices
 - better app switcher
-
+- combine single tap modifiers shfit then ctrl and hold = shift + ctrl + ...
+- maybe swap alt and cmd
+- back and forward in browser history
 
 
 
