@@ -1,5 +1,15 @@
 # zmk-config
 
-future:
+future design:
 - 32 key (2+3+3+3+2 + 3 thumb)
-- mo nav in raised layers
+- adding angle and space for the staggers (more naturtal placement)
+
+problems
+- mo nav in raised layers as well (eg. enter and arrows in num layer
+- one up and one down layer if posible
+- better way to change devices
+- better app switcher
+
+
+
+
