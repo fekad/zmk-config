@@ -86,7 +86,7 @@
         // |   A   |   S   |   D   |   F   |   G   |   |   H   |   J   |   K   |   L   |   ;:  |
         // |   Z   |   X   |   C   |   V   |   B   |   |   N   |   M   |   ,<  |   . > |   /?  |
         //                 | CTRL  | (NAV) | SHIFT |   | SPACE |  SYM  |  ALT  |
-        base_layer {
+        default_layer {
             bindings = <
                 &ht LG(Q) Q         &ht LG(W) W         &ht LG(E) E         &ht LG(R) R         &ht LG(T) T             &ht LG(Y) Y         &ht LG(U) U         &ht LG(I) I         &ht LG(O) O         &ht LG(P) P
                 &ht LG(A) A         &ht LG(S) S         &ht LG(D) D         &ht LG(F) F         &ht LG(G) G             &ht LG(H) H         &ht LG(J) J         &ht LG(K) K         &ht LG(L) L         &ht LG(SEMI) SEMI
