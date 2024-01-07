@@ -70,11 +70,6 @@
 #define U_WH_R &mwh SCROLL_RIGHT
 #define U_WH_U &mwh SCROLL_UP
 
-#define U_RDO &kp LS(LG(Z))
-#define U_PST &kp LG(V)
-#define U_CPY &kp LG(C)
-#define U_CUT &kp LG(X)
-#define U_UND &kp LG(Z)
 
 / {
     behaviors {
@@ -266,9 +261,9 @@
 
         button_layer {
             bindings = <
-                U_UND             U_CUT             U_CPY             U_PST             U_RDO             U_RDO             U_PST             U_CPY             U_CUT             U_UND             
+                LG(Z)             LG(X)             LG(C)             LG(V)             LS(LG(Z))         LS(LG(Z))         LG(V)             LG(C)             LG(X)             LG(Z)             
                 &kp LSHFT         &kp LCTRL         &kp LALT          &kp LGUI          &none             &none             &kp LGUI          &kp LALT          &kp LCTRL         &kp LSHFT         
-                U_UND             U_CUT             U_CPY             U_PST             U_RDO             U_RDO             U_PST             U_CPY             U_CUT             U_UND             
+                LG(Z)             LG(X)             LG(C)             LG(V)             LS(LG(Z))         LS(LG(Z))         LG(V)             LG(C)             LG(X)             LG(Z)             
                                                     U_BTN3            U_BTN1            U_BTN2            U_BTN2            U_BTN1            U_BTN3                               
             >;
         };
@@ -284,7 +279,7 @@
             bindings = <
                 &none             &u_to_TAP         &u_to_EXTRA       &u_to_BASE        &none             &kp HOME          &kp PG_UP         &kp UP            &kp PG_DN         &none             
                 &kp LSHFT         &kp LCTRL         &kp LALT          &kp LGUI          &none             &kp END           &kp LEFT          &kp DOWN          &kp RIGHT         &u_caps_word      
-                &none             &kp RALT          &u_to_NUM         &u_to_NAV         &none             U_RDO             U_PST             U_CPY             U_CUT             U_UND             
+                &none             &kp RALT          &u_to_NUM         &u_to_NAV         &none             LS(LG(Z))         LG(V)             LG(C)             LG(X)             LG(Z)             
                                                     &none             &none             &none             &kp SPACE         &kp BSPC          &kp DEL                              
             >;
         };
@@ -293,7 +288,7 @@
             bindings = <
                 &none             &u_to_TAP         &u_to_EXTRA       &u_to_BASE        &none             U_WH_L            U_WH_U            U_MS_U            U_WH_D            &none             
                 &kp LSHFT         &kp LCTRL         &kp LALT          &kp LGUI          &none             U_WH_R            U_MS_L            U_MS_D            U_MS_R            &none             
-                &none             &kp RALT          &u_to_SYM         &u_to_MOUSE       &none             U_RDO             U_PST             U_CPY             U_CUT             U_UND             
+                &none             &kp RALT          &u_to_SYM         &u_to_MOUSE       &none             LS(LG(Z))         LG(V)             LG(C)             LG(X)             LG(Z)             
                                                     &none             &none             &none             U_BTN2            U_BTN1            U_BTN3                               
             >;
         };
