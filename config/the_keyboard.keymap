@@ -7,8 +7,8 @@
 #define BASE   0
 #define EXTRA  1
 #define TAP    2
-/*
 #define BUTTON 3
+/*
 #define NAV    4
 #define MOUSE  5
 #define MEDIA  6
@@ -264,12 +264,6 @@
             >;
         };
 
-    };
-};
-
-
-/*
-
         button_layer {
             bindings = <
                 U_UND             U_CUT             U_CPY             U_PST             U_RDO             U_RDO             U_PST             U_CPY             U_CUT             U_UND             
@@ -278,6 +272,13 @@
                                                     U_BTN3            U_BTN1            U_BTN2            U_BTN2            U_BTN1            U_BTN3                               
             >;
         };
+
+    };
+};
+
+
+/*
+
 
         nav_layer {
             bindings = <
