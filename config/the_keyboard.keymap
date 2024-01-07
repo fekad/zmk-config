@@ -283,14 +283,6 @@
             >;
         };
         
-        mouse_layer {
-            bindings = <
-                &none             &u_to_TAP         &u_to_EXTRA       &u_to_BASE        &none             U_WH_L            U_WH_U            U_MS_U            U_WH_D            &none             
-                &kp LSHFT         &kp LCTRL         &kp LALT          &kp LGUI          &none             U_WH_R            U_MS_L            U_MS_D            U_MS_R            &none             
-                &none             &kp RALT          &u_to_SYM         &u_to_MOUSE       &none             U_RDO             U_PST             U_CPY             U_CUT             U_UND             
-                                                    &none             &none             &none             U_BTN2            U_BTN1            U_BTN3                               
-          >;
-        };
         
         media_layer {
             bindings = <
@@ -327,7 +319,14 @@
                                                                       &kp K_APP         &kp RET           &kp TAB           &none             &none             &none                                
             >;
         };
- 
+        mouse_layer {
+            bindings = <
+                &none             &u_to_TAP         &u_to_EXTRA       &u_to_BASE        &none             U_WH_L            U_WH_U            U_MS_U            U_WH_D            &none             
+                &kp LSHFT         &kp LCTRL         &kp LALT          &kp LGUI          &none             U_WH_R            U_MS_L            U_MS_D            U_MS_R            &none             
+                &none             &kp RALT          &u_to_SYM         &u_to_MOUSE       &none             U_RDO             U_PST             U_CPY             U_CUT             U_UND             
+                                                    &none             &none             &none             U_BTN2            U_BTN1            U_BTN3                               
+            >;
+        }; 
         // -------------------------------------------------------------------------------------
         // |   Q   |   W   |   F   |   P   |   B   |   |   J   |   L   |   U   |   Y   |   ;:  |
         // |   A   |   R   |   S   |   T   |   G   |   |   M   |   N   |   E   |   I   |   O   |
