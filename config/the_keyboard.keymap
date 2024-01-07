@@ -265,13 +265,6 @@
             >;
         };
 
-    };
-};
-
-
-/*
-
-
         nav_layer {
             bindings = <
                 &none             &u_to_TAP         &u_to_EXTRA       &u_to_BASE        &none             &kp HOME          &kp PG_UP         &kp UP            &kp PG_DN         &none             
@@ -326,6 +319,11 @@
             >;
         };
 
+    };
+};
+
+
+/*
         // -------------------------------------------------------------------------------------
         // |   Q   |   W   |   F   |   P   |   B   |   |   J   |   L   |   U   |   Y   |   ;:  |
         // |   A   |   R   |   S   |   T   |   G   |   |   M   |   N   |   E   |   I   |   O   |
