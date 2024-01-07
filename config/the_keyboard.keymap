@@ -244,6 +244,7 @@
                 &u_mt LSHFT A     &u_mt LCTRL R     &u_mt LALT S      &u_mt LGUI T      &kp G             &kp M             &u_mt LGUI N      &u_mt LALT E      &u_mt LCTRL I     &u_mt LSHFT O     
                 &kp Z             &kp X             &kp C             &kp D             &kp V             &kp K             &kp H             &kp COMMA         &kp DOT           &kp SLASH         
                                                     &u_lt MEDIA ESC   &u_lt NAV RET     &u_lt MOUSE TAB   &u_lt SYM SPACE   &u_lt NUM BSPC    &u_lt FUN DEL
+            >;
         };
 
         extra_layer {
