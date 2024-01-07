@@ -58,9 +58,7 @@
 #define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
 #define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
 
-#define U_BTN1 &mkp MB1
-#define U_BTN2 &mkp MB2
-#define U_BTN3 &mkp MB3
+
 #define U_MS_D &mmv MOVE_DOWN
 #define U_MS_L &mmv MOVE_LEFT
 #define U_MS_R &mmv MOVE_RIGHT
@@ -264,7 +262,7 @@
                 LG(Z)             LG(X)             LG(C)             LG(V)             LS(LG(Z))         LS(LG(Z))         LG(V)             LG(C)             LG(X)             LG(Z)             
                 &kp LSHFT         &kp LCTRL         &kp LALT          &kp LGUI          &none             &none             &kp LGUI          &kp LALT          &kp LCTRL         &kp LSHFT         
                 LG(Z)             LG(X)             LG(C)             LG(V)             LS(LG(Z))         LS(LG(Z))         LG(V)             LG(C)             LG(X)             LG(Z)             
-                                                    U_BTN3            U_BTN1            U_BTN2            U_BTN2            U_BTN1            U_BTN3                               
+                                                    &mkp MB3          &mkp MB1          &mkp MB2          &mkp MB2          &mkp MB1          &mkp MB3                             
             >;
         };
 
@@ -289,7 +287,7 @@
                 &none             &u_to_TAP         &u_to_EXTRA       &u_to_BASE        &none             U_WH_L            U_WH_U            U_MS_U            U_WH_D            &none             
                 &kp LSHFT         &kp LCTRL         &kp LALT          &kp LGUI          &none             U_WH_R            U_MS_L            U_MS_D            U_MS_R            &none             
                 &none             &kp RALT          &u_to_SYM         &u_to_MOUSE       &none             LS(LG(Z))         LG(V)             LG(C)             LG(X)             LG(Z)             
-                                                    &none             &none             &none             U_BTN2            U_BTN1            U_BTN3                               
+                                                    &none             &none             &none             &mkp MB2          &mkp MB1          &mkp MB3                             
             >;
         };
          
