@@ -68,7 +68,7 @@
 #define U_WH_D &mwh SCROLL_DOWN
 #define U_WH_L &mwh SCROLL_LEFT
 #define U_WH_R &mwh SCROLL_RIGHT
-#define U_WH_U &mwh SCROLL_U
+#define U_WH_U &mwh SCROLL_UP
 
 #define U_RDO &kp LS(LG(Z))
 #define U_PST &kp LG(V)
