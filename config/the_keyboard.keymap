@@ -131,20 +131,12 @@
             bindings = <&none>, <&to 0>;
         };
 
-        to_EXTRA: to_EXTRA {
+        to_QWERTY: to_QWERTY {
             compatible = "zmk,behavior-tap-dance";
-            label = "TO_EXTRA";
+            label = "TO_QWERTY";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&none>, <&to 1>;
-        };
-
-        to_TAP: to_TAP {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TO_TAP";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&none>, <&to 2>;
+            bindings = <&none>, <&to 7>;
         };
 
         to_BUTTON: to_BUTTON {
@@ -152,7 +144,7 @@
             label = "TO_BUTTON";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&none>, <&to 3>;
+            bindings = <&none>, <&to 8>;
         };
 
         to_NAV: to_NAV {
@@ -160,7 +152,7 @@
             label = "TO_NAV";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&none>, <&to 4>;
+            bindings = <&none>, <&to 1>;
         };
 
         to_MOUSE: to_MOUSE {
@@ -168,7 +160,7 @@
             label = "TO_MOUSE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&none>, <&to 5>;
+            bindings = <&none>, <&to 2>;
         };
 
         to_MEDIA: to_MEDIA {
@@ -176,7 +168,7 @@
             label = "TO_MEDIA";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&none>, <&to 6>;
+            bindings = <&none>, <&to 3>;
         };
 
         to_NUM: to_NUM {
@@ -184,7 +176,7 @@
             label = "TO_NUM";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&none>, <&to 7>;
+            bindings = <&none>, <&to 4>;
         };
 
         to_SYM: to_SYM {
@@ -192,7 +184,7 @@
             label = "TO_SYM";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&none>, <&to 8>;
+            bindings = <&none>, <&to 5>;
         };
 
         to_FUN: to_FUN {
@@ -200,7 +192,7 @@
             label = "TO_FUN";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&none>, <&to 9>;
+            bindings = <&none>, <&to 6>;
         };
 
         hml: hml {
@@ -230,6 +222,24 @@
             require-prior-idle-ms = <150>;
             hold-trigger-on-release;
         };
+
+        m_comma: m_comma {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_COMMA";
+            bindings = <&kp COMMA>, <&kp SEMI>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        m_dot: m_dot {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_DOT";
+            bindings = <&kp DOT>, <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -239,8 +249,62 @@
             bindings = <
 &kp Q          &kp W         &kp F        &kp P        &kp B        &kp J        &kp L            &kp U        &kp Y         &kp SQT
 &hml LSHIFT A  &hml LCTRL R  &hml LALT S  &hml LGUI T  &kp G        &kp M        &hmr LGUI N      &hmr LALT E  &hmr LCTRL I  &hmr LSHFT O
-&kp Z          &kp X         &kp C        &kp D        &kp V        &kp K        &kp H            &kp COMMA    &kp DOT       &kp SLASH
-                             &lt 6 ESC    &lt 4 ENTER  &lt 5 TAB    &lt 8 SPACE  &lt 7 BACKSPACE  &lt 9 DEL
+&kp Z          &kp X         &kp C        &kp D        &kp V        &kp K        &kp H            &m_comma     &m_dot        &kp SLASH
+                             &lt 3 ESC    &lt 1 ENTER  &lt 2 TAB    &lt 5 SPACE  &lt 4 BACKSPACE  &lt 6 DEL
+            >;
+        };
+
+        nav {
+            bindings = <
+&none      &none      &to_QWERTY  &to_BASE  &none    &kp HOME       &kp PG_UP  &kp UP     &kp PG_DN  &none
+&kp LSHFT  &kp LCTRL  &kp LALT    &kp LGUI  &none    &kp END        &kp LEFT   &kp DOWN   &kp RIGHT  &caps
+&none      &none      &to_NUM     &to_NAV   &none    &kp LS(LG(Z))  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
+                      &none       &none     &none    &kp SPACE      &kp BSPC   &kp DEL
+            >;
+        };
+
+        mouse {
+            bindings = <
+&none      &none      &to_QWERTY  &to_BASE   &none    &mwh SCROLL_LEFT   &mwh SCROLL_UP  &mmv MOVE_UP    &mwh SCROLL_DOWN  &none
+&kp LSHFT  &kp LCTRL  &kp LALT    &kp LGUI   &none    &mwh SCROLL_RIGHT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &none
+&none      &none      &to_SYM     &to_MOUSE  &none    &kp LS(LG(Z))      &kp LG(V)       &kp LG(C)       &kp LG(X)         &kp LG(Z)
+                      &none       &none      &none    &mkp MB2           &mkp MB1        &mkp MB3
+            >;
+        };
+
+        media {
+            bindings = <
+&none      &none      &to_QWERTY  &to_BASE   &none    &kp C_BRI_UP      &none       &kp C_VOL_UP  &none       &none
+&kp LSHFT  &kp LCTRL  &kp LALT    &kp LGUI   &none    &kp C_BRI_DN      &kp C_PREV  &kp C_VOL_DN  &kp C_NEXT  &none
+&none      &none      &to_FUN     &to_MEDIA  &none    &out_tog          &bt_0       &bt_1         &bt_2       &bt_3
+                      &none       &none      &none    &kp C_PLAY_PAUSE  &kp C_STOP  &kp C_MUTE
+            >;
+        };
+
+        number {
+            bindings = <
+&kp LBKT   &kp N7  &kp N8   &kp N9  &kp RBKT     &none  &to_BASE  &to_QWERTY  &none      &none
+&kp SEMI   &kp N4  &kp N5   &kp N6  &kp EQUAL    &none  &kp LGUI  &kp LALT    &kp LCTRL  &kp LSHFT
+&kp GRAVE  &kp N1  &kp N2   &kp N3  &kp BSLH     &none  &to_NUM   &to_NAV     &none      &none
+                   &kp DOT  &kp N0  &kp MINUS    &none  &none     &none
+            >;
+        };
+
+        symbol {
+            bindings = <
+&kp GRAVE  &kp SEMICOLON  &kp HASH   &kp GT     &kp LT           &none  &to_BASE  &to_QWERTY  &none      &none
+&kp LBRC   &kp LBKT       &kp LPAR   &kp COLON  &kp BACKSLASH    &none  &kp LGUI  &kp LALT    &kp LCTRL  &kp LSHFT
+&kp CARET  &kp SLASH      &kp ASTRK  &kp MINUS  &kp PLUS         &none  &to_SYM   &to_MOUSE   &none      &none
+                          &none      &kp EQUAL  &kp UNDER        &none  &none     &none
+            >;
+        };
+
+        fun {
+            bindings = <
+&kp F12  &kp F7  &kp F8              &kp F9   &kp PSCRN          &none  &to_BASE  &to_QWERTY  &none      &none
+&kp F11  &kp F4  &kp F5              &kp F6   &kp SLCK           &none  &kp LGUI  &kp LALT    &kp LCTRL  &kp LSHFT
+&kp F10  &kp F1  &kp F2              &kp F3   &kp PAUSE_BREAK    &none  &to_FUN   &to_MEDIA   &none      &none
+                 &kp K_CONTEXT_MENU  &kp RET  &kp TAB            &none  &none     &none
             >;
         };
 
@@ -249,16 +313,7 @@
 &kp Q         &kp W         &kp E        &kp R        &kp T        &kp Y        &kp U            &kp I        &kp O         &kp P
 &hml LSHFT A  &hml LCTRL S  &hml LALT D  &hml LGUI F  &kp G        &kp H        &hmr LGUI J      &hmr LALT K  &hmr LCTRL L  &hmr LSHFT SQT
 &kp Z         &kp X         &kp C        &kp V        &kp B        &kp N        &kp M            &kp COMMA    &kp DOT       &kp SLASH
-                            &lt 6 ESC    &lt 4 ENTER  &lt 5 TAB    &lt 8 SPACE  &lt 7 BACKSPACE  &lt 9 DEL
-            >;
-        };
-
-        tap {
-            bindings = <
-&kp Q  &kp W  &kp F    &kp P    &kp B      &kp J      &kp L     &kp U      &kp Y    &kp SQT
-&kp A  &kp R  &kp S    &kp T    &kp G      &kp M      &kp N     &kp E      &kp I    &kp O
-&kp Z  &kp X  &kp C    &kp D    &kp V      &kp K      &kp H     &kp COMMA  &kp DOT  &kp SLASH
-              &kp ESC  &kp RET  &kp TAB    &kp SPACE  &kp BSPC  &kp DEL
+                            &lt 3 ESC    &lt 1 ENTER  &lt 2 TAB    &lt 5 SPACE  &lt 4 BACKSPACE  &lt 6 DEL
             >;
         };
 
@@ -268,60 +323,6 @@
 &kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI   &none            &none          &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT
 &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LG(Z))    &kp LS(LG(Z))  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
                       &mkp MB3   &mkp MB1   &mkp MB2         &mkp MB2       &mkp MB1   &mkp MB3
-            >;
-        };
-
-        nav {
-            bindings = <
-&none      &to_TAP    &to_EXTRA  &to_BASE  &none    &kp HOME       &kp PG_UP  &kp UP     &kp PG_DN  &none
-&kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI  &none    &kp END        &kp LEFT   &kp DOWN   &kp RIGHT  &caps
-&none      &none      &to_NUM    &to_NAV   &none    &kp LS(LG(Z))  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
-                      &none      &none     &none    &kp SPACE      &kp BSPC   &kp DEL
-            >;
-        };
-
-        mouse {
-            bindings = <
-&none      &to_TAP    &to_EXTRA  &to_BASE   &none    &mwh SCROLL_LEFT   &mwh SCROLL_UP  &mmv MOVE_UP    &mwh SCROLL_DOWN  &none
-&kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI   &none    &mwh SCROLL_RIGHT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &none
-&none      &none      &to_SYM    &to_MOUSE  &none    &kp LS(LG(Z))      &kp LG(V)       &kp LG(C)       &kp LG(X)         &kp LG(Z)
-                      &none      &none      &none    &mkp MB2           &mkp MB1        &mkp MB3
-            >;
-        };
-
-        media {
-            bindings = <
-&none      &to_TAP    &to_EXTRA  &to_BASE   &none    &kp C_BRI_UP      &none       &kp C_VOL_UP  &none       &none
-&kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI   &none    &kp C_BRI_DN      &kp C_PREV  &kp C_VOL_DN  &kp C_NEXT  &none
-&none      &none      &to_FUN    &to_MEDIA  &none    &out_tog          &bt_0       &bt_1         &bt_2       &bt_3
-                      &none      &none      &none    &kp C_PLAY_PAUSE  &kp C_STOP  &kp C_MUTE
-            >;
-        };
-
-        number {
-            bindings = <
-&kp LBKT   &kp N7  &kp N8   &kp N9  &kp RBKT     &none  &to_BASE  &to_EXTRA  &to_TAP    &none
-&kp SEMI   &kp N4  &kp N5   &kp N6  &kp EQUAL    &none  &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT
-&kp GRAVE  &kp N1  &kp N2   &kp N3  &kp BSLH     &none  &to_NUM   &to_NAV    &none      &none
-                   &kp DOT  &kp N0  &kp MINUS    &none  &none     &none
-            >;
-        };
-
-        symbol {
-            bindings = <
-&kp GRAVE  &kp SEMICOLON  &kp HASH   &kp GT     &kp LT           &none  &to_BASE  &to_EXTRA  &to_TAP    &none
-&kp LBRC   &kp LBKT       &kp LPAR   &kp COLON  &kp BACKSLASH    &none  &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT
-&kp CARET  &kp SLASH      &kp ASTRK  &kp MINUS  &kp PLUS         &none  &to_SYM   &to_MOUSE  &none      &none
-                          &none      &kp EQUAL  &kp UNDER        &none  &none     &none
-            >;
-        };
-
-        fun {
-            bindings = <
-&kp F12  &kp F7  &kp F8              &kp F9   &kp PSCRN          &none  &to_BASE  &to_EXTRA  &to_TAP    &none
-&kp F11  &kp F4  &kp F5              &kp F6   &kp SLCK           &none  &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT
-&kp F10  &kp F1  &kp F2              &kp F3   &kp PAUSE_BREAK    &none  &to_FUN   &to_MEDIA  &none      &none
-                 &kp K_CONTEXT_MENU  &kp RET  &kp TAB            &none  &none     &none
             >;
         };
     };
