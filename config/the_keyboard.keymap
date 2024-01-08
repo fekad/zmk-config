@@ -1,8 +1,8 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
 
 #define BASE   0
 #define EXTRA  1
@@ -14,14 +14,9 @@
 #define NUM    7
 #define SYM    8
 #define FUN    9
-#define U_MOUSE_MOVE_MAX 1250
-#define U_MOUSE_MOVE_EXPONENT 1
-#define U_MOUSE_MOVE_TIME 1500
-#define U_MOUSE_MOVE_DELAY 0
-#define U_MOUSE_SCROLL_MAX 100
-#define U_MOUSE_SCROLL_EXPONENT 1
-#define U_MOUSE_SCROLL_TIME 5000
-#define U_MOUSE_SCROLL_DELAY 0
+
+&lt {
+};
 
 &mmv {
     acceleration-exponent = <1>;
@@ -29,34 +24,29 @@
     delay-ms = <0>;
 };
 
-&lt {
-};
-
-/*
 &mwh {
-  acceleration-exponent = <U_MOUSE_SCROLL_EXPONENT>;
-  time-to-max-speed-ms = <U_MOUSE_SCROLL_TIME>;
-  delay-ms = <U_MOUSE_SCROLL_DELAY>;
+  acceleration-exponent = <1>;
+  time-to-max-speed-ms = <5000>;
+  delay-ms = <0>;
 };
-*/
 
-#undef MOVE_UP
-#undef MOVE_DOWN
-#undef MOVE_LEFT
-#undef MOVE_RIGHT
+#undef MOUSE_UP
+#undef MOUSE_DOWN
+#undef MOUSE_LEFT
+#undef MOUSE_RIGHT
 #undef SCROLL_UP
 #undef SCROLL_DOWN
 #undef SCROLL_LEFT
 #undef SCROLL_RIGHT
 
-#define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
-#define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
-#define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
-#define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
-#define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
-#define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
-#define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
-#define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
+#define MOUSE_UP MOVE_VERT(-1250)
+#define MOUSE_DOWN MOVE_VERT(1250)
+#define MOUSE_LEFT MOVE_HOR(-1250)
+#define MOUSE_RIGHT MOVE_HOR(1250)
+#define SCROLL_UP SCROLL_VERT(100)
+#define SCROLL_DOWN SCROLL_VERT(-100)
+#define SCROLL_LEFT SCROLL_HOR(-100)
+#define SCROLL_RIGHT SCROLL_HOR(100)
 
 / {
     behaviors {
@@ -265,10 +255,10 @@
 
         mouse {
             bindings = <
-&none      &none      &to_QWERTY  &to_BASE   &none    &mwh SCROLL_LEFT   &mwh SCROLL_UP  &mmv MOVE_UP    &mwh SCROLL_DOWN  &none
-&kp LSHFT  &kp LCTRL  &kp LALT    &kp LGUI   &none    &mwh SCROLL_RIGHT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &none
-&none      &none      &to_SYM     &to_MOUSE  &none    &kp LS(LG(Z))      &kp LG(V)       &kp LG(C)       &kp LG(X)         &kp LG(Z)
-                      &none       &none      &none    &mkp MB2           &mkp MB1        &mkp MB3
+&none      &none      &to_QWERTY  &to_BASE   &none    &mwh SCROLL_LEFT   &mwh SCROLL_UP   &mmv MOUSE_UP    &mwh SCROLL_DOWN  &none
+&kp LSHFT  &kp LCTRL  &kp LALT    &kp LGUI   &none    &mwh SCROLL_RIGHT  &mmv MOUSE_LEFT  &mmv MOUSE_DOWN  &mmv MOUSE_RIGHT  &none
+&none      &none      &to_SYM     &to_MOUSE  &none    &kp LS(LG(Z))      &kp LG(V)        &kp LG(C)        &kp LG(X)         &kp LG(Z)
+                      &none       &none      &none    &mkp MB2           &mkp MB1         &mkp MB3
             >;
         };
 
