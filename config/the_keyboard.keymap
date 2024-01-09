@@ -4,20 +4,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define BASE   0
-#define EXTRA  1
-#define TAP    2
-#define BUTTON 3
-#define NAV    4
-#define MOUSE  5
-#define MEDIA  6
-#define NUM    7
-#define SYM    8
-#define FUN    9
-
-&lt {
-};
-
 &mmv {
     acceleration-exponent = <1>;
     time-to-max-speed-ms = <1500>;
