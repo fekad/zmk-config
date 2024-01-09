@@ -275,6 +275,69 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        m_astrk: m_astrk {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_ASTRK";
+            bindings = <&kp ASTRK>, <&kp CARET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        m_and: m_and {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_AND";
+            bindings = <&kp AMPERSAND>, <&kp PIPE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        m_excl: m_excl {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_EXCL";
+            bindings = <&kp EXCL>, <&kp QUESTION>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        m_slash: m_slash {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_SLASH";
+            bindings = <&kp KP_SLASH>, <&kp BACKSLASH>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        m_under: m_under {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_UNDER";
+            bindings = <&kp UNDER>, <&kp KP_MINUS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        m_hash: m_hash {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_HASH";
+            bindings = <&kp HASH>, <&kp AT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        m_percent: m_percent {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_PERCENT";
+            bindings = <&kp PERCENT>, <&kp DOLLAR>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -284,7 +347,7 @@
             bindings = <
 &kp Q          &kp W         &kp F        &kp P        &kp B        &kp J        &kp L            &kp U        &kp Y         &kp SQT
 &hml LSHIFT A  &hml LCTRL R  &hml LALT S  &hml LGUI T  &kp G        &kp M        &hmr LGUI N      &hmr LALT E  &hmr LCTRL I  &hmr LSHFT O
-&kp Z          &kp X         &kp C        &kp D        &kp V        &kp K        &kp H            &m_comma     &m_dot        &kp SLASH
+&kp Z          &kp X         &kp C        &kp D        &kp V        &kp K        &kp H            &m_comma     &m_dot        &m_excl
                              &lt 3 ESC    &lt 1 ENTER  &lt 2 TAB    &lt 5 SPACE  &lt 4 BACKSPACE  &lt 6 DEL
             >;
         };
@@ -318,28 +381,28 @@
 
         number {
             bindings = <
-&kp LBKT   &kp N7  &kp N8   &kp N9  &kp RBKT     &none     &none     &none     &none       &none
-&kp SEMI   &kp N4  &kp N5   &kp N6  &kp EQUAL    &none     &kp LGUI  &kp LALT  &kp LCTRL   &kp LSHFT
-&kp GRAVE  &kp N1  &kp N2   &kp N3  &kp BSLH     &to_BASE  &to_NUM   &to_NAV   &to_BUTTON  &to_QWERTY
-                   &kp DOT  &kp N0  &kp MINUS    &none     &none     &none
+&none          &kp N7  &kp N8   &kp N9  &none              &none     &none     &none     &none       &none
+&kp KP_MINUS   &kp N4  &kp N5   &kp N6  &kp KP_PLUS        &none     &kp LGUI  &kp LALT  &kp LCTRL   &kp LSHFT
+&kp KP_DIVIDE  &kp N1  &kp N2   &kp N3  &kp KP_ASTERISK    &to_BASE  &to_NUM   &to_NAV   &to_BUTTON  &to_QWERTY
+                       &kp DOT  &kp N0  &kp KP_EQUAL       &none     &none     &none
             >;
         };
 
         symbol {
             bindings = <
-&kp GRAVE  &kp SEMICOLON  &kp HASH   &kp GT     &kp LT           &none     &none     &none      &none       &none
-&m_brc     &m_bkt         &m_par     &kp COLON  &kp BACKSLASH    &none     &kp LGUI  &kp LALT   &kp LCTRL   &kp LSHFT
-&kp CARET  &kp SLASH      &kp ASTRK  &kp MINUS  &kp PLUS         &to_BASE  &to_SYM   &to_MOUSE  &to_BUTTON  &to_QWERTY
-                          &none      &kp EQUAL  &kp UNDER        &none     &none     &none
+&kp GRAVE  &m_lt       &m_hash   &m_and    &m_excl      &none     &none     &none      &none       &none
+&m_brc     &m_bkt      &m_par    &m_dot    &m_comma     &none     &kp LGUI  &kp LALT   &kp LCTRL   &kp LSHFT
+&none      &m_percent  &m_slash  &m_astrk  &none        &to_BASE  &to_SYM   &to_MOUSE  &to_BUTTON  &to_QWERTY
+                       &kp APOS  &m_under  &kp EQUAL    &none     &none     &none
             >;
         };
 
         fun {
             bindings = <
-&kp F12  &kp F7  &kp F8              &kp F9   &kp PSCRN          &none     &none     &none      &none       &to_bl
-&kp F11  &kp F4  &kp F5              &kp F6   &kp SLCK           &none     &kp LGUI  &kp LALT   &kp LCTRL   &kp LSHFT
-&kp F10  &kp F1  &kp F2              &kp F3   &kp PAUSE_BREAK    &to_BASE  &to_FUN   &to_MEDIA  &to_BUTTON  &to_QWERTY
-                 &kp K_CONTEXT_MENU  &kp RET  &kp TAB            &none     &none     &none
+&kp F12  &kp F7  &kp F8  &kp F9   &kp PSCRN          &none     &none     &none      &none       &to_bl
+&kp F11  &kp F4  &kp F5  &kp F6   &kp SLCK           &none     &kp LGUI  &kp LALT   &kp LCTRL   &kp LSHFT
+&kp F10  &kp F1  &kp F2  &kp F3   &kp PAUSE_BREAK    &to_BASE  &to_FUN   &to_MEDIA  &to_BUTTON  &to_QWERTY
+                 &none   &kp RET  &kp TAB            &none     &none     &none
             >;
         };
 
