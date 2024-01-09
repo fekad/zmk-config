@@ -354,8 +354,8 @@
 
         nav {
             bindings = <
-&none       &none       &none     &none     &none       &kp HOME       &kp PG_UP  &kp UP     &kp PG_DN  &kp LG(LEFT_BRACKET)
-&kp LSHFT   &kp LCTRL   &kp LALT  &kp LGUI  &none       &kp END        &kp LEFT   &kp DOWN   &kp RIGHT  &kp LG(RBKT)
+&none       &none       &none     &none     &none       &kp HOME       &kp PG_UP  &kp UP     &kp PG_DN  &kp LG(RBKT)
+&kp LSHFT   &kp LCTRL   &kp LALT  &kp LGUI  &none       &kp END        &kp LEFT   &kp DOWN   &kp RIGHT  &kp LG(LBKT)
 &to_QWERTY  &to_BUTTON  &to_NUM   &to_NAV   &to_BASE    &kp LS(LG(Z))  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
                         &none     &none     &none       &kp SPACE      &kp BSPC   &kp DEL
             >;
