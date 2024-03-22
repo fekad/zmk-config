@@ -36,51 +36,6 @@
 
 / {
     behaviors {
-        bt_0: bt_0 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BT_0";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0>, <&bt BT_SEL 0>, <&bt BT_CLR>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        bt_1: bt_1 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BT_1";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1>, <&bt BT_SEL 1 &bt BT_CLR>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        bt_2: bt_2 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BT_2";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 2>, <&bt BT_SEL 2 &bt BT_CLR>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        bt_3: bt_3 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BT_3";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 3>, <&bt BT_SEL 3 &bt BT_CLR>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        bt_4: bt_4 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BT_4";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 4>, <&bt BT_SEL 4 &bt BT_CLR>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         out_tog: out_tog {
             compatible = "zmk,behavior-mod-morph";
             label = "OUT_TOG";
@@ -324,13 +279,6 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        bt0: bt0 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BT0";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0>, <&bt BT_CLR>;
-        };
     };
 
     keymap {
@@ -365,10 +313,10 @@
 
         media {
             bindings = <
-&bootloader  &none       &none     &none      &none       &kp C_BRI_UP      &none       &kp C_VOL_UP  &none       &none
-&kp LSHFT    &kp LCTRL   &kp LALT  &kp LGUI   &none       &kp C_BRI_DN      &kp C_PREV  &kp C_VOL_DN  &kp C_NEXT  &none
-&to_QWERTY   &to_BUTTON  &to_FUN   &to_MEDIA  &to_BASE    &out_tog          &bt0        &bt_1         &bt_2       &bt_3
-                         &none     &none      &none       &kp C_PLAY_PAUSE  &kp C_STOP  &kp C_MUTE
+&bootloader  &none       &none     &none      &bt BT_CLR    &kp C_BRI_UP      &none         &kp C_VOL_UP  &none         &none
+&kp LSHFT    &kp LCTRL   &kp LALT  &kp LGUI   &none         &kp C_BRI_DN      &kp C_PREV    &kp C_VOL_DN  &kp C_NEXT    &none
+&to_QWERTY   &to_BUTTON  &to_FUN   &to_MEDIA  &to_BASE      &out_tog          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
+                         &none     &none      &none         &kp C_PLAY_PAUSE  &kp C_STOP    &kp C_MUTE
             >;
         };
 
