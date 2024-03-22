@@ -38,6 +38,7 @@
     behaviors {
         out_tog: out_tog {
             compatible = "zmk,behavior-mod-morph";
+            label = "OUT_TOG";
             #binding-cells = <0>;
             bindings = <&out OUT_BLE>, <&out OUT_USB>;
 
@@ -46,6 +47,7 @@
 
         caps: caps {
             compatible = "zmk,behavior-mod-morph";
+            label = "CAPS";
             #binding-cells = <0>;
             bindings = <&caps_word>, <&kp CAPS>;
 
@@ -54,6 +56,7 @@
 
         to_BASE: to_BASE {
             compatible = "zmk,behavior-tap-dance";
+            label = "TO_BASE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&none>, <&to 0>;
@@ -61,6 +64,7 @@
 
         to_QWERTY: to_QWERTY {
             compatible = "zmk,behavior-tap-dance";
+            label = "TO_QWERTY";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&none>, <&to 7>;
@@ -68,6 +72,7 @@
 
         to_BUTTON: to_BUTTON {
             compatible = "zmk,behavior-tap-dance";
+            label = "TO_BUTTON";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&none>, <&to 8>;
@@ -75,6 +80,7 @@
 
         to_NAV: to_NAV {
             compatible = "zmk,behavior-tap-dance";
+            label = "TO_NAV";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&none>, <&to 1>;
@@ -82,6 +88,7 @@
 
         to_MOUSE: to_MOUSE {
             compatible = "zmk,behavior-tap-dance";
+            label = "TO_MOUSE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&none>, <&to 2>;
@@ -89,6 +96,7 @@
 
         to_MEDIA: to_MEDIA {
             compatible = "zmk,behavior-tap-dance";
+            label = "TO_MEDIA";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&none>, <&to 3>;
@@ -96,6 +104,7 @@
 
         to_NUM: to_NUM {
             compatible = "zmk,behavior-tap-dance";
+            label = "TO_NUM";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&none>, <&to 4>;
@@ -103,6 +112,7 @@
 
         to_SYM: to_SYM {
             compatible = "zmk,behavior-tap-dance";
+            label = "TO_SYM";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&none>, <&to 5>;
@@ -110,6 +120,7 @@
 
         to_FUN: to_FUN {
             compatible = "zmk,behavior-tap-dance";
+            label = "TO_FUN";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&none>, <&to 6>;
@@ -117,6 +128,7 @@
 
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
+            label = "HML";
             #binding-cells = <2>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
@@ -130,6 +142,7 @@
 
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
             #binding-cells = <2>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
@@ -143,6 +156,7 @@
 
         m_comma: m_comma {
             compatible = "zmk,behavior-mod-morph";
+            label = "M_COMMA";
             bindings = <&kp COMMA>, <&kp SEMI>;
 
             #binding-cells = <0>;
@@ -151,6 +165,7 @@
 
         m_dot: m_dot {
             compatible = "zmk,behavior-mod-morph";
+            label = "M_DOT";
             bindings = <&kp DOT>, <&kp COLON>;
 
             #binding-cells = <0>;
@@ -159,6 +174,7 @@
 
         to_bl: to_bl {
             compatible = "zmk,behavior-tap-dance";
+            label = "TO_BL";
             #binding-cells = <0>;
             bindings = <&none>, <&bootloader>;
 
@@ -167,6 +183,7 @@
 
         m_par: m_par {
             compatible = "zmk,behavior-mod-morph";
+            label = "M_PAR";
             bindings = <&kp LPAR>, <&kp RPAR>;
 
             #binding-cells = <0>;
@@ -175,6 +192,7 @@
 
         m_brc: m_brc {
             compatible = "zmk,behavior-mod-morph";
+            label = "M_BRC";
             bindings = <&kp LBRC>, <&kp RBRC>;
 
             #binding-cells = <0>;
@@ -183,6 +201,7 @@
 
         m_bkt: m_bkt {
             compatible = "zmk,behavior-mod-morph";
+            label = "M_BKT";
             bindings = <&kp LBKT>, <&kp RBKT>;
 
             #binding-cells = <0>;
@@ -191,6 +210,7 @@
 
         m_lt: m_lt {
             compatible = "zmk,behavior-mod-morph";
+            label = "M_LT";
             bindings = <&kp LT>, <&kp GT>;
 
             #binding-cells = <0>;
@@ -199,6 +219,7 @@
 
         m_astrk: m_astrk {
             compatible = "zmk,behavior-mod-morph";
+            label = "M_ASTRK";
             bindings = <&kp ASTRK>, <&kp CARET>;
 
             #binding-cells = <0>;
@@ -207,6 +228,7 @@
 
         m_and: m_and {
             compatible = "zmk,behavior-mod-morph";
+            label = "M_AND";
             bindings = <&kp AMPERSAND>, <&kp PIPE>;
 
             #binding-cells = <0>;
@@ -215,6 +237,7 @@
 
         m_excl: m_excl {
             compatible = "zmk,behavior-mod-morph";
+            label = "M_EXCL";
             bindings = <&kp EXCL>, <&kp QUESTION>;
 
             #binding-cells = <0>;
@@ -223,6 +246,7 @@
 
         m_slash: m_slash {
             compatible = "zmk,behavior-mod-morph";
+            label = "M_SLASH";
             bindings = <&kp KP_SLASH>, <&kp BACKSLASH>;
 
             #binding-cells = <0>;
@@ -231,6 +255,7 @@
 
         m_under: m_under {
             compatible = "zmk,behavior-mod-morph";
+            label = "M_UNDER";
             bindings = <&kp UNDER>, <&kp KP_MINUS>;
 
             #binding-cells = <0>;
@@ -239,6 +264,7 @@
 
         m_hash: m_hash {
             compatible = "zmk,behavior-mod-morph";
+            label = "M_HASH";
             bindings = <&kp HASH>, <&kp AT>;
 
             #binding-cells = <0>;
@@ -247,6 +273,7 @@
 
         m_percent: m_percent {
             compatible = "zmk,behavior-mod-morph";
+            label = "M_PERCENT";
             bindings = <&kp PERCENT>, <&kp DOLLAR>;
 
             #binding-cells = <0>;
