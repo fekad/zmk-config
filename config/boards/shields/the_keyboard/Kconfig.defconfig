@@ -4,7 +4,7 @@
 if SHIELD_THE_KEYBOARD_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "keyboard-black"
+	default "keyboard-white"
 
 config ZMK_SPLIT_ROLE_CENTRAL
 	default y
