@@ -14,4 +14,5 @@ problems
 - back and forward in browser history
 
 
-
+- alternate modifier keys
+- swapping nav and number layers
