@@ -1,19 +1,20 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+
 &mmv {
+    time-to-max-speed-ms = <300>;
     acceleration-exponent = <1>;
-    time-to-max-speed-ms = <1500>;
-    delay-ms = <0>;
 };
 
-&mwh {
-    acceleration-exponent = <1>;
-    time-to-max-speed-ms = <5000>;
-    delay-ms = <0>;
+&msc {
+    time-to-max-speed-ms = <300>;
+    acceleration-exponent = <0>;
 };
 
 #undef MOUSE_UP
@@ -304,8 +305,8 @@
 
         mouse {
             bindings = <
-&none       &none       &none     &none      &none       &mwh SCROLL_LEFT   &mwh SCROLL_UP   &mmv MOUSE_UP    &mwh SCROLL_DOWN  &none
-&kp LSHFT   &kp LCTRL   &kp LALT  &kp LGUI   &none       &mwh SCROLL_RIGHT  &mmv MOUSE_LEFT  &mmv MOUSE_DOWN  &mmv MOUSE_RIGHT  &none
+&none       &none       &none     &none      &none       &msc SCROLL_LEFT   &msc SCROLL_UP   &mmv MOUSE_UP    &msc SCROLL_DOWN  &none
+&kp LSHFT   &kp LCTRL   &kp LALT  &kp LGUI   &none       &msc SCROLL_RIGHT  &mmv MOUSE_LEFT  &mmv MOUSE_DOWN  &mmv MOUSE_RIGHT  &none
 &to_QWERTY  &to_BUTTON  &to_SYM   &to_MOUSE  &to_BASE    &kp LS(LG(Z))      &kp LG(V)        &kp LG(C)        &kp LG(X)         &kp LG(Z)
                         &none     &none      &none       &mkp MB2           &mkp MB1         &mkp MB3
             >;
