@@ -17,23 +17,6 @@
     acceleration-exponent = <0>;
 };
 
-#undef MOUSE_UP
-#undef MOUSE_DOWN
-#undef MOUSE_LEFT
-#undef MOUSE_RIGHT
-#undef SCROLL_UP
-#undef SCROLL_DOWN
-#undef SCROLL_LEFT
-#undef SCROLL_RIGHT
-
-#define MOUSE_UP MOVE_VERT(-1250)
-#define MOUSE_DOWN MOVE_VERT(1250)
-#define MOUSE_LEFT MOVE_HOR(-1250)
-#define MOUSE_RIGHT MOVE_HOR(1250)
-#define SCROLL_UP SCROLL_VERT(100)
-#define SCROLL_DOWN SCROLL_VERT(-100)
-#define SCROLL_LEFT SCROLL_HOR(-100)
-#define SCROLL_RIGHT SCROLL_HOR(100)
 
 / {
     behaviors {
@@ -305,8 +288,8 @@
 
         mouse {
             bindings = <
-&none       &none       &none     &none      &none       &msc SCROLL_LEFT   &msc SCROLL_UP   &mmv MOUSE_UP    &msc SCROLL_DOWN  &none
-&kp LSHFT   &kp LCTRL   &kp LALT  &kp LGUI   &none       &msc SCROLL_RIGHT  &mmv MOUSE_LEFT  &mmv MOUSE_DOWN  &mmv MOUSE_RIGHT  &none
+&none       &none       &none     &none      &none       &msc SCRL_LEFT     &msc SCRL_UP     &mmv MOVE_UP     &msc SCRL_DOWN    &none
+&kp LSHFT   &kp LCTRL   &kp LALT  &kp LGUI   &none       &msc SCRL_RIGHT    &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &none
 &to_QWERTY  &to_BUTTON  &to_SYM   &to_MOUSE  &to_BASE    &kp LS(LG(Z))      &kp LG(V)        &kp LG(C)        &kp LG(X)         &kp LG(Z)
                         &none     &none      &none       &mkp MB2           &mkp MB1         &mkp MB3
             >;
