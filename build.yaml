@@ -1,6 +1,4 @@
 ---
-board: [ "nice_nano_v2" ]
-shield: [ "the_keyboard_left", "the_keyboard_right" ]
 include:
   - board: nice_nano_v2
     shield: the_keyboard_right
