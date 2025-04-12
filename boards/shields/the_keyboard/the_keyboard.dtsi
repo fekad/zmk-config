@@ -22,7 +22,6 @@
 			                  RC(0,15) RC(0,16) RC(0,17)    RC(0,35) RC(0,34) RC(0,33)
 		>;
 	};
-
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-direct";
 		input-gpios =
