@@ -1,0 +1,5 @@
+config SHIELD_THE_KEYBOARD_LEFT
+	def_bool $(shields_list_contains,the_keyboard_left)
+
+config SHIELD_THE_KEYBOARD_RIGHT
+	def_bool $(shields_list_contains,the_keyboard_right)
